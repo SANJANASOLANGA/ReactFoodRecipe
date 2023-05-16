@@ -1,9 +1,10 @@
-import image from '../assets/backgroundImage.jpg'
+import image from '../assets/backgroundImage.svg'
 
 function WelcomePage() {
   return (
-    <div style={{ backgroundImage:`url(${image})`,backgroundRepeat:"no-repeat", backgroundSize:"contain" , height:'100%',width:'100%'}}>
-      <h1>Welcome Page</h1>
+    <div style={{ backgroundImage:`url(${image})`,backgroundPosition: "center",backgroundRepeat:"no-repeat", backgroundSize:'cover' , height:'100vh',width:'100%', }}>
+
+      {/* <h1>Welcome Page</h1> */}
     </div>
   );
 }
