@@ -1,4 +1,4 @@
-import image from '../assets/backgroundImage.svg'
+import image from '../../assets/backgroundImage.svg'
 
 function WelcomePage() {
   return (
