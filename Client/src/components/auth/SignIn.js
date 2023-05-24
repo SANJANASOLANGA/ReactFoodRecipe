@@ -11,7 +11,35 @@ export default class Login extends Component {
   }
 
   handleSubmit(e) {
-    
+    e.preventDefault()
+    const { email, password } = this.state;
+    console.log(email, password)
+    fetch("http://localhost:5000/login-user", {
+      method: "POST",
+      crossDomain: true,
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data, "userRegister");
+        if (data.status == "ok") {
+          alert("Login Successful");
+          window.localStorage.setItem("token", data.data);
+          window.localStorage.setItem("loggedIn", true);
+
+          window.location.href = "./userDetails"
+        } else {
+          alert("Something went wrong");
+        }
+      });
 
   }
 
