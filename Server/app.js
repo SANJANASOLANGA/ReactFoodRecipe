@@ -66,8 +66,15 @@ app.post("/register", async (req, res) => {
     }
     res.json({ status: "error", error: "InvAlid Password" });
   });
-
-
+  
+  app.get("/getAllUser", async (req, res) => {
+    try {
+      const allUser = await User.find({});
+      res.send({ status: "ok", data: allUser });
+    } catch (error) {
+      console.log(error);
+    }
+  });
 
   app.listen(5000, () => {
     console.log("Server Started");
