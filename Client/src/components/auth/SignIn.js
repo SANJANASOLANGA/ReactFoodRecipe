@@ -1,45 +1,52 @@
-import image from '../../assets/backgroundImage.svg'
+import React, { Component } from 'react'
 
-function SignIn() {
-  return (
-    <div style={{ backgroundImage: `url(${image})`, backgroundPosition: "center", backgroundRepeat: "no-repeat", backgroundSize: 'cover', height: '100vh', width: '100%', }}>
+export default class Login extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      email: "",
+      password: ""
+    };
+    this.handleSubmit = this.handleSubmit.bind(this)
+  }
 
-      <form
-      // onSubmit={this.handleSubmit}
-      >
+  handleSubmit(e) {
+    
+
+  }
+
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
         <h3>Sign In</h3>
 
-        <div className="mb-3">
+        <div>
           <label>Email address</label>
           <input
             type="email"
-            className="form-control"
             placeholder="Enter email"
-          // onChange={(e) => this.setState({ email: e.target.value })}
+            onChange={(e) => this.setState({ email: e.target.value })}
           />
         </div>
 
-        <div className="mb-3">
+        <div>
           <label>Password</label>
           <input
             type="password"
-            className="form-control"
             placeholder="Enter password"
-          // onChange={(e) => this.setState({ password: e.target.value })}
+            onChange={(e) => this.setState({ password: e.target.value })}
           />
         </div>
 
-        <div className="d-grid">
-          <button type="submit" className="btn btn-primary">
+        <div>
+          <button type="submit">
             Submit
           </button>
         </div>
-        <p className="forgot-password text-right">
+        <p>
           Don't have an account? <a href="/sign-up">Sign Up</a>
         </p>
       </form>
-    </div>
-  );
+    )
+  }
 }
-
-export default SignIn;
