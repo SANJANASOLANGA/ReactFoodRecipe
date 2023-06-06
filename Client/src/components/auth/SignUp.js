@@ -37,7 +37,9 @@ export default function SignUp() {
                     console.log(data, "userRegister");
                     if (data.status == "ok") {
                         alert("Registration Successful");
-                    } else {
+                    } else if(data.error == "User Exists") {
+                        alert("User Exists!");
+                    }else {
                         alert("Something went wrong");
                     }
                 });
