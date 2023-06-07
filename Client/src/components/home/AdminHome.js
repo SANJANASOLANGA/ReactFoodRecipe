@@ -1,10 +1,10 @@
 import React from "react";
-import NavBar from "../Navbar";
+import NavBarAdmin from "../NavBarAdmin";
 export default function AdminHome() {
 
   return (
     <div>
-      <NavBar/>
+      <NavBarAdmin/>
       <h1>Welcome Admin</h1>
     </div>
   );
