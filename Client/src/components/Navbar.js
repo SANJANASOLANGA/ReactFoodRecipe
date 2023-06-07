@@ -55,7 +55,7 @@ function NavBar() {
           <Nav className="ms-auto" defaultActiveKey="#home">
             <Nav.Item>
               <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
-                {/* <AiOutlineHome style={{ marginBottom: "2px" }} />  */}
+                <AiOutlineHome style={{ marginBottom: "2px", color: 'red' }} />
                 Home
               </Nav.Link>
             </Nav.Item>
@@ -66,8 +66,8 @@ function NavBar() {
                 to="/about"
                 onClick={() => updateExpanded(false)}
               >
-                {/* <AiOutlineUser style={{ marginBottom: "2px" }} /> */}
-                 About
+                <AiOutlineUser style={{ marginBottom: "2px", color: 'red' }} />
+                About
               </Nav.Link>
             </Nav.Item>
 
@@ -77,9 +77,9 @@ function NavBar() {
                 to="/project"
                 onClick={() => updateExpanded(false)}
               >
-                {/* <AiOutlineFundProjectionScreen
-                  style={{ marginBottom: "2px" }}
-                /> */}
+                <AiOutlineFundProjectionScreen
+                  style={{ marginBottom: "2px", color: 'red' }}
+                />
                 {" "}
                 Recipes
               </Nav.Link>
@@ -91,7 +91,7 @@ function NavBar() {
                 to="/resume"
                 onClick={() => updateExpanded(false)}
               >
-                <CgFileDocument style={{ marginBottom: "2px" }} /> 
+                <CgFileDocument style={{ marginBottom: "2px", color: 'red' }} />
                 Download
               </Nav.Link>
             </Nav.Item>
@@ -102,7 +102,7 @@ function NavBar() {
                 to="/contact"
                 onClick={() => updateExpanded(false)}
               >
-                <ImPhone style={{ marginBottom: "2px" }} /> Contact
+                <ImPhone style={{ marginBottom: "2px", color: 'red' }} /> Contact
               </Nav.Link>
             </Nav.Item>
 
@@ -113,7 +113,7 @@ function NavBar() {
                 className="fork-btn-inner"
               >
                 <CgGitFork style={{ fontSize: "1.2em" }} />{" "}
-                {/* <AiFillStar style={{ fontSize: "1.1em" }} /> */}
+                <AiFillStar style={{ fontSize: "1.1em", color: 'red' }} />
               </Button>
             </Nav.Item>
           </Nav>
