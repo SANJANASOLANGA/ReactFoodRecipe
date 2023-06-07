@@ -6,6 +6,7 @@ import UserDetails from './components/auth/userDetails';
 import { Contact } from './components/contact/Contact';
 import Recipes from './components/recipes/Recipes';
 import DownloadRecipes from './components/downloadRecipes/DownloadRecipes';
+import About from './components/about/About';
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
               <Route path='/contact' element={<Contact />} />
               <Route path='/recipes' element={<Recipes />} />
               <Route path='/downloadRecipes' element={<DownloadRecipes />} />
+              <Route path='/about' element={<About />} />
             </Routes>
         </div>
       </Router>
