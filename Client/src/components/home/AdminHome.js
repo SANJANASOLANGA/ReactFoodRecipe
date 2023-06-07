@@ -1,11 +1,20 @@
 import React from "react";
 import NavBarAdmin from "../NavBarAdmin";
-export default function AdminHome() {
+import { meta } from "../contact/content_option";
+import { Helmet, HelmetProvider } from "react-helmet-async";
+import { Container, Row, Col, Alert } from "react-bootstrap";
 
+export default function AdminHome() {
+  
   return (
-    <div>
+    <HelmetProvider>
       <NavBarAdmin/>
-      <h1>Welcome Admin</h1>
-    </div>
+      <Container>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>{meta.title} | Home</title>
+        </Helmet>
+      </Container>
+    </HelmetProvider>
   );
 }
