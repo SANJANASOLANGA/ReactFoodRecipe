@@ -8,6 +8,7 @@ import { meta } from "./content_option";
 import { AiFillGithub, AiOutlineTwitter, AiFillInstagram } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 import Particle from "../Particle";
+import NavBar from "../Navbar";
 
 export const Contact = () => {
   const [formData, setFormdata] = useState({
@@ -69,6 +70,7 @@ export const Contact = () => {
 
   return (
     <HelmetProvider>
+      <NavBar/>
       <Container>
         <Helmet>
           <meta charSet="utf-8" />
