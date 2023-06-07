@@ -1,5 +1,5 @@
 const meta = {
-    title: "Sewmini Sanjana"
+    title: "CookeryCorner"
 };
 
 const contactConfig = {
