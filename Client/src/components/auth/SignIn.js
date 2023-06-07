@@ -30,12 +30,14 @@ export default class Login extends Component {
       .then((res) => res.json())
       .then((data) => {
         console.log(data, "userRegister");
-        if (data.status == "ok") {
+        if (data.status === "ok") {
           alert("Login Successful");
           window.localStorage.setItem("token", data.data);
           window.localStorage.setItem("loggedIn", true);
 
           window.location.href = "./userDetails"
+        } else if (data.error === "User Not found"){
+          alert("User Not Found! Enter a valid email");
         } else {
           alert("Something went wrong");
         }
