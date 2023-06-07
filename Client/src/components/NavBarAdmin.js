@@ -81,7 +81,7 @@ function NavBarAdmin() {
             <Nav.Item>
               <Nav.Link
                 as={Link}
-                to="/recipes"
+                to="/add-recipes"
                 onClick={handleLinkClick}
               >
                 <AiOutlineFundProjectionScreen
