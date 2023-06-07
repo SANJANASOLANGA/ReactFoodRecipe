@@ -9,7 +9,7 @@ export default function SignUp() {
     const [secretKey, setSecretKey] = useState("");
 
     const handleSubmit = (e) => {
-        if (userType == "Admin" && secretKey != "123") {
+        if (userType === "Admin" && secretKey !== "123") {
             e.preventDefault();
             alert("Invalid Admin");
         } else {
@@ -35,9 +35,9 @@ export default function SignUp() {
                 .then((res) => res.json())
                 .then((data) => {
                     console.log(data, "userRegister");
-                    if (data.status == "ok") {
+                    if (data.status === "ok") {
                         alert("Registration Successful");
-                    } else if(data.error == "User Exists") {
+                    } else if(data.error === "User Exists") {
                         alert("User Exists!");
                     }else {
                         alert("Something went wrong");
@@ -68,7 +68,7 @@ export default function SignUp() {
                         />
                         Admin
                     </div>
-                    {userType == "Admin" ? (
+                    {userType === "Admin" ? (
                         <div>
                             <label>Secret Key</label>
                             <input
