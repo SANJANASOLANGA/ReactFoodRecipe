@@ -12,13 +12,14 @@ import AdminHome from './components/home/AdminHome';
 import AdminAddRecipes from './components/recipes/AdminAddRecipes';
 import AdminAbout from './components/about/AdminAbout';
 import AdminContact from './components/contact/AdminContact'
+import CreateReceipe from './components/recipes/CreateRecipe';
 
 const App = () => {
   return (
       <Router>
         <div>
             <Routes>
-              <Route exact path="/" element={<SignIn />} />
+              <Route exact path="/" element={<CreateReceipe />} />
               <Route path="/sign-in" element={<SignIn />} />
               <Route path="/sign-up" element={<SignUp />} />
               <Route path="/userDetails" element={<UserDetails />} />
@@ -31,6 +32,7 @@ const App = () => {
               <Route path='/add-recipes' element={<AdminAddRecipes />} />
               <Route path='/admin-about' element={<AdminAbout />} />
               <Route path='/admin-contact' element={<AdminContact />} />
+              <Route path='/create-receipe' element={<CreateReceipe />} />
             </Routes>
         </div>
       </Router>
