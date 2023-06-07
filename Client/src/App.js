@@ -10,6 +10,8 @@ import About from './components/about/About';
 import UserHome from './components/home/UserHome';
 import AdminHome from './components/home/AdminHome';
 import AdminAddRecipes from './components/recipes/AdminAddRecipes';
+import AdminAbout from './components/about/AdminAbout';
+import AdminContact from './components/contact/AdminContact'
 
 const App = () => {
   return (
@@ -27,6 +29,8 @@ const App = () => {
               <Route path='/userhome' element={<UserHome />} />
               <Route path='/adminhome' element={<AdminHome />} />
               <Route path='/add-recipes' element={<AdminAddRecipes />} />
+              <Route path='/admin-about' element={<AdminAbout />} />
+              <Route path='/admin-contact' element={<AdminContact />} />
             </Routes>
         </div>
       </Router>
