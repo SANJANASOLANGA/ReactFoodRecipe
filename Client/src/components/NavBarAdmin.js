@@ -70,7 +70,7 @@ function NavBarAdmin() {
             <Nav.Item>
               <Nav.Link
                 as={Link}
-                to="/about"
+                to="/admin-about"
                 onClick={handleLinkClick}
               >
                 <AiOutlineUser style={{ marginBottom: "2px", color: 'red' }} />
@@ -95,7 +95,7 @@ function NavBarAdmin() {
             <Nav.Item>
               <Nav.Link
                 as={Link}
-                to="/contact"
+                to="/admin-contact"
                 onClick={handleLinkClick}
               >
                 <ImPhone style={{ marginBottom: "2px", color: 'red' }} /> Contact
