@@ -1,5 +1,5 @@
 import React from "react";
-import NavBar from "../Navbar";
+import NavBarAdmin from "../NavBarAdmin";
 import { meta } from "../contact/content_option";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col, Alert } from "react-bootstrap";
@@ -8,7 +8,7 @@ export default function AdminAddRecipes() {
   
   return (
     <HelmetProvider>
-      <NavBar/>
+      <NavBarAdmin/>
       <Container>
         <Helmet>
           <meta charSet="utf-8" />
