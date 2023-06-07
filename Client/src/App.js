@@ -9,6 +9,7 @@ import DownloadRecipes from './components/downloadRecipes/DownloadRecipes';
 import About from './components/about/About';
 import UserHome from './components/home/UserHome';
 import AdminHome from './components/home/AdminHome';
+import AdminAddRecipes from './components/recipes/AdminAddRecipes';
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
               <Route path='/about' element={<About />} />
               <Route path='/userhome' element={<UserHome />} />
               <Route path='/adminhome' element={<AdminHome />} />
+              <Route path='/add-recipes' element={<AdminAddRecipes />} />
             </Routes>
         </div>
       </Router>
