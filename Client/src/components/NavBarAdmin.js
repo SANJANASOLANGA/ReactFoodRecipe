@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import {
-  AiOutlineHome,
-  AiOutlineUser,
-  AiOutlineFundProjectionScreen,
-} from "react-icons/ai";
-import { CgFileDocument, CgGitFork } from "react-icons/cg";
+import { AiOutlineHome, AiOutlineUser, AiOutlineFundProjectionScreen } from "react-icons/ai";
+import { CgFileAdd } from "react-icons/cg";
 import { ImPhone } from "react-icons/im";
-import { AiFillStar } from "react-icons/ai";
+import { FiLogOut } from "react-icons/fi";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
@@ -84,7 +80,7 @@ function NavBarAdmin() {
                 to="/add-recipes"
                 onClick={handleLinkClick}
               >
-                <AiOutlineFundProjectionScreen
+                <CgFileAdd
                   style={{ marginBottom: "2px", color: 'red' }}
                 />
                 {" "}
@@ -99,6 +95,16 @@ function NavBarAdmin() {
                 onClick={handleLinkClick}
               >
                 <ImPhone style={{ marginBottom: "2px", color: 'red' }} /> Contact
+              </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item>
+              <Nav.Link
+                as={Link}
+                to="/admin-contact"
+                onClick={handleLinkClick}
+              >
+                <FiLogOut style={{ marginBottom: "2px", color: 'red' }} /> Log Out
               </Nav.Link>
             </Nav.Item>
 
