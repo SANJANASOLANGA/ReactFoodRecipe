@@ -48,6 +48,7 @@ export default class Login extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
+        <h6>Are you a admin? Please Sign In first to Add Recipe</h6>
         <h3>Sign In</h3>
 
         <div>
