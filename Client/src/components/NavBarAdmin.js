@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { AiOutlineHome, AiOutlineUser, AiOutlineFundProjectionScreen } from "react-icons/ai";
+import { AiOutlineHome, AiOutlineUser } from "react-icons/ai";
 import { CgFileAdd } from "react-icons/cg";
 import { ImPhone } from "react-icons/im";
 import { FiLogOut } from "react-icons/fi";
