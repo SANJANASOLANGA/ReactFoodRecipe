@@ -9,8 +9,8 @@ export default function SignUp() {
     const [secretKey, setSecretKey] = useState("");
 
     const handleSubmit = (e) => {
-        if (userType === "Admin" && secretKey !== "123") {
-            e.preventDefault();
+        if (secretKey !== "123") {
+            // e.preventDefault();
             alert("Invalid Admin");
         } else {
             e.preventDefault();
@@ -37,9 +37,10 @@ export default function SignUp() {
                     console.log(data, "userRegister");
                     if (data.status === "ok") {
                         alert("Registration Successful");
-                    } else if(data.error === "User Exists") {
+                        window.location.href = "./AdminHome"
+                    } else if (data.error === "User Exists") {
                         alert("User Exists!");
-                    }else {
+                    } else {
                         alert("Something went wrong");
                     }
                 });
@@ -51,7 +52,7 @@ export default function SignUp() {
             <div>
                 <form onSubmit={handleSubmit}>
                     <h3>Sign Up</h3>
-                    <div>
+                    {/* <div>
                         Register As
                         <input
                             type="radio"
@@ -77,8 +78,15 @@ export default function SignUp() {
                                 onChange={(e) => setSecretKey(e.target.value)}
                             />
                         </div>
-                    ) : null}
-
+                    ) : null} */}
+                    <div>
+                        <label>Secret Key</label>
+                        <input
+                            type="text"
+                            placeholder="Secret Key"
+                            onChange={(e) => setSecretKey(e.target.value)}
+                        />
+                    </div>
                     <div>
                         <label>First name</label>
                         <input
@@ -121,7 +129,7 @@ export default function SignUp() {
                         </button>
                     </div>
                     <p>
-                        Already have an account <a href="/sign-in">Sign In</a>
+                        Already have an account? <a href="/sign-in"><span style={{ color: "black" }}>Sign In</span></a>
                     </p>
                 </form>
             </div>
