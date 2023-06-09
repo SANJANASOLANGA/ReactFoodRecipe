@@ -75,7 +75,7 @@ export default class Login extends Component {
           </button>
         </div>
         <p>
-          Don't have an account? <a href="/sign-up">Sign Up</a>
+          Don't have an account? <a href="/sign-up"><span style={{color:"black"}}>Sign Up</span></a>
         </p>
       </form>
     )
