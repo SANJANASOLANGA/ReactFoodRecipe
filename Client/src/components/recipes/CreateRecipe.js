@@ -13,6 +13,13 @@ const CreateRecipe = () => {
     imageURL: '',
   });
 
+  const handleChange = (e) => {
+    setInputs((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
 
 
   return (
