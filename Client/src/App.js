@@ -13,13 +13,15 @@ import AdminAddRecipes from './components/recipes/AdminAddRecipes';
 import AdminAbout from './components/about/AdminAbout';
 import AdminContact from './components/contact/AdminContact'
 import CreateReceipe from './components/recipes/CreateRecipe';
+import EditRecipe from './components/recipes/EditRecipe'
+import EditRecipeDetail from './components/recipes/EditRecipeDetail';
 
 const App = () => {
   return (
       <Router>
         <div>
             <Routes>
-              <Route exact path="/" element={<UserHome />} />
+              <Route exact path="/" element={<AdminHome />} />
               <Route path="/sign-in" element={<SignIn />} />
               <Route path="/sign-up" element={<SignUp />} />
               <Route path="/userDetails" element={<UserDetails />} />
@@ -33,6 +35,8 @@ const App = () => {
               <Route path='/admin-about' element={<AdminAbout />} />
               <Route path='/admin-contact' element={<AdminContact />} />
               <Route path='/create-receipe' element={<CreateReceipe />} />
+              <Route path='/edit-recipes' element={<EditRecipe />} />
+              <Route path="/edit-recipes/:id" element={<EditRecipeDetail />}/>
             </Routes>
         </div>
       </Router>
