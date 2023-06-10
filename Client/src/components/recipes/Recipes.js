@@ -3,6 +3,12 @@ import axios from 'axios';
 import UserRecipe from '../recipes/UserRecipe';
 
 const Recipes = () => {
+  const [recipes,setRecipes]= useState();
+
+  useEffect(()=>{
+    sendRequest().then(data => setRecipes(data.blogs));
+  },[])
+  console.log(recipes);
   
   return (
     <div>
