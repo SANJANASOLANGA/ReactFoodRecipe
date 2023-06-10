@@ -18,7 +18,10 @@ const AdminRecipe = ({ title, description, imageURL, userName, isUser, id }) => 
     return data;
   };
 
-  
+  const handleDelete = () => {
+    alert('Deleted........');
+    deleteRequest().then(() => navigate('/')).then(() => navigate('/adminhome'));
+  };
 
   return (
     <div>
