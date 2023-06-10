@@ -2,8 +2,17 @@ import React from 'react';
 import { Avatar, Box, Card, CardContent, CardHeader, CardMedia, IconButton, Typography } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const AdminRecipe = ({ title, description, imageURL, userName, isUser, id }) => {
+  const navigate = useNavigate();
+
+  const handleEdit = (e) => {
+    navigate(`/update-recipes/${id}`);
+  };
+
+  
 
   return (
     <div>
@@ -19,7 +28,7 @@ const AdminRecipe = ({ title, description, imageURL, userName, isUser, id }) => 
           },
         }}
       >
-        {(
+        {isUser && (
           <Box display={'flex'}>
             <IconButton onClick={handleEdit} sx={{ marginLeft: 'auto' }}>
               <EditIcon color="warning" />
