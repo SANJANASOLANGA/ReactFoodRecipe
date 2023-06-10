@@ -19,7 +19,16 @@ const AdminRecipe = ({ title, description, imageURL, userName, isUser, id }) => 
           },
         }}
       >
-        
+        {(
+          <Box display={'flex'}>
+            <IconButton onClick={handleEdit} sx={{ marginLeft: 'auto' }}>
+              <EditIcon color="warning" />
+            </IconButton>
+            <IconButton onClick={handleDelete}>
+              <DeleteForeverIcon color="error" />
+            </IconButton>
+          </Box>
+        )}
         <CardHeader
           avatar={
             <Avatar sx={{ bgcolor: 'red' }} aria-label="recipe">
