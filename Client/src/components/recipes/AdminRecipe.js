@@ -20,6 +20,16 @@ const AdminRecipe = ({ title, description, imageURL, userName, isUser, id }) => 
         }}
       >
         
+        <CardHeader
+          avatar={
+            <Avatar sx={{ bgcolor: 'red' }} aria-label="recipe">
+              {userName.charAt(0)}
+            </Avatar>
+          }
+          title={title}
+          subheader="Date"
+        />
+        
       </Card>
     </div>
   );
