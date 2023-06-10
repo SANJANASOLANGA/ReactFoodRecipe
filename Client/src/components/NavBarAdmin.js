@@ -77,14 +77,14 @@ function NavBarAdmin() {
             <Nav.Item>
               <Nav.Link
                 as={Link}
-                to="/create-receipe"
+                to="/edit-recipes"
                 onClick={handleLinkClick}
               >
                 <CgFileAdd
                   style={{ marginBottom: "2px", color: 'red' }}
                 />
                 {" "}
-                Recipes
+                Edit Recipes
               </Nav.Link>
             </Nav.Item>
 
