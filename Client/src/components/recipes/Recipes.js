@@ -1,20 +1,23 @@
-import React from "react";
-import NavBar from "../Navbar";
-import { meta } from "../contact/content_option";
-import { Helmet, HelmetProvider } from "react-helmet-async";
-import { Container, Row, Col, Alert } from "react-bootstrap";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import UserRecipe from '../recipes/UserRecipe';
 
-export default function Recipes() {
+const Recipes = () => {
   
   return (
-    <HelmetProvider>
-      <NavBar/>
-      <Container>
-        <Helmet>
-          <meta charSet="utf-8" />
-          <title>{meta.title} | Recipes</title>
-        </Helmet>
-      </Container>
-    </HelmetProvider>
-  );
+    <div>
+      {recipes && 
+      recipes.map((recipe,index) => (
+      <UserRecipe 
+      id = {recipe._id}
+      isUser = {localStorage.getItem("userId")===recipe.user._id}
+      title={recipe.title} 
+      description={recipe.description} 
+      imageURL={recipe.image} 
+      userName={recipe.user.name} /> 
+      ))}
+    </div>
+  )
 }
+
+export default Recipes;
