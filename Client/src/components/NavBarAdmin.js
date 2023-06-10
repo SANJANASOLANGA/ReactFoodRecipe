@@ -77,7 +77,7 @@ function NavBarAdmin() {
             <Nav.Item>
               <Nav.Link
                 as={Link}
-                to="/add-recipes"
+                to="/create-receipe"
                 onClick={handleLinkClick}
               >
                 <CgFileAdd
