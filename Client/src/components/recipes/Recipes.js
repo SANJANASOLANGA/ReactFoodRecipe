@@ -4,7 +4,11 @@ import UserRecipe from '../recipes/UserRecipe';
 
 const Recipes = () => {
   const [recipes,setRecipes]= useState();
-
+  const sendRequest = async () => {
+    const res = await axios.get("http://localhost:5000/api/blog").catch(err=>console.log(err));
+    const data = await res.data;
+    return data;
+  }
   useEffect(()=>{
     sendRequest().then(data => setRecipes(data.blogs));
   },[])
