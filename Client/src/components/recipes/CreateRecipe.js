@@ -31,6 +31,11 @@ const CreateRecipe = () => {
     return data;
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(inputs);
+    sendRequest().then((data) => console.log(data)).then(() => navigate('/adminhome'));
+  };
 
   return (
     <div>
