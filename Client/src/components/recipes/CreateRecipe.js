@@ -6,6 +6,13 @@ import { useNavigate } from 'react-router-dom';
 const labelStyles = { mb: 1, mt: 2, fontSize: '24px', fontWeight: 'bold' };
 
 const CreateRecipe = () => {
+  const navigate = useNavigate();
+  const [inputs, setInputs] = useState({
+    title: '',
+    description: '',
+    imageURL: '',
+  });
+
 
 
   return (
