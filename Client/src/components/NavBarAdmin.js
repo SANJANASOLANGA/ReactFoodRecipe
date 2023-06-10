@@ -84,6 +84,20 @@ function NavBarAdmin() {
                   style={{ marginBottom: "2px", color: 'red' }}
                 />
                 {" "}
+                Recipes
+              </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item>
+              <Nav.Link
+                as={Link}
+                to="/create-receipe"
+                onClick={handleLinkClick}
+              >
+                <CgFileAdd
+                  style={{ marginBottom: "2px", color: 'red' }}
+                />
+                {" "}
                 Add Recipes
               </Nav.Link>
             </Nav.Item>
