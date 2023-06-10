@@ -20,6 +20,16 @@ const CreateRecipe = () => {
     }));
   };
 
+  const sendRequest = async () => {
+    const res = await axios.post('http://localhost:5000/api/recipe/add', {
+      title: inputs.title,
+      description: inputs.description,
+      image: inputs.imageURL,
+      user: localStorage.getItem('userId'),
+    }).catch((err) => console.log(err));
+    const data = await res.data;
+    return data;
+  };
 
 
   return (
