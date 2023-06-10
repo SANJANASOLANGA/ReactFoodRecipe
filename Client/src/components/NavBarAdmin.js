@@ -4,6 +4,7 @@ import { AiOutlineHome, AiOutlineUser } from "react-icons/ai";
 import { CgFileAdd } from "react-icons/cg";
 import { ImPhone } from "react-icons/im";
 import { FiLogOut } from "react-icons/fi";
+import { LuEdit } from "react-icons/lu";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
@@ -80,7 +81,7 @@ function NavBarAdmin() {
                 to="/edit-recipes"
                 onClick={handleLinkClick}
               >
-                <CgFileAdd
+                <LuEdit
                   style={{ marginBottom: "2px", color: 'red' }}
                 />
                 {" "}
