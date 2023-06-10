@@ -30,7 +30,13 @@ const AdminRecipe = ({ title, description, imageURL, userName, isUser, id }) => 
           subheader="Date"
         />
         <CardMedia component="img" height="194" image={imageURL} alt="Recipe" />
-        
+        <CardContent>
+          <hr />
+          <br />
+          <Typography variant="body2" color="text.secondary">
+            <b>{userName}</b>: {description}
+          </Typography>
+        </CardContent>
       </Card>
     </div>
   );
