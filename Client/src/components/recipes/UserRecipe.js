@@ -25,6 +25,7 @@ const UserRecipe = ({ title, description, imageURL, userName }) => {
           title={title}
           subheader="Date"
         />
+        <CardMedia component="img" height="194" image={imageURL} alt="Recipe" />
         
       </Card>
     </div>
