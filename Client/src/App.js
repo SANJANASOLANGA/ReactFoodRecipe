@@ -14,7 +14,7 @@ import AdminAbout from './components/about/AdminAbout';
 import AdminContact from './components/contact/AdminContact'
 import CreateReceipe from './components/recipes/CreateRecipe';
 import EditRecipe from './components/recipes/EditRecipe'
-import EditRecipeDetail from './components/recipes/EditRecipeDetail';
+import UpdateRecipe from './components/recipes/UpdateRecipe';
 
 const App = () => {
   return (
@@ -36,7 +36,7 @@ const App = () => {
               <Route path='/admin-contact' element={<AdminContact />} />
               <Route path='/create-receipe' element={<CreateReceipe />} />
               <Route path='/edit-recipes' element={<EditRecipe />} />
-              <Route path="/edit-recipes/:id" element={<EditRecipeDetail />}/>
+              <Route path="/update-recipes/:id" element={<UpdateRecipe />}/>
             </Routes>
         </div>
       </Router>
