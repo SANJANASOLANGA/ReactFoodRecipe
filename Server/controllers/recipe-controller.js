@@ -49,3 +49,23 @@ exports.addRecipe = async (req, res, next) => {
   }
   return res.status(200).json({ recipe });
 };
+
+exports.updateRecipe = async (req, res, next) => {
+  const { title, description } = req.body;
+  const recipeId = req.params.id;
+  let recipe;
+  try {
+    recipe = await Recipe.findByIdAndUpdate(recipeId, {
+      title,
+      description,
+    });
+  } catch (err) {
+    console.log(err);
+    return res.status(500).json({ message: err });
+  }
+  if (!recipe) {
+    return res.status(500).json({ message: 'Unable to update' });
+  }
+  return res.status(200).json({ recipe });
+};
+
