@@ -6,12 +6,13 @@ exports.getAllRecipes = async (req, res, next) => {
   let recipes;
   try {
     recipes = await Recipe.find().populate('user');
+    console.log(recipes)
   } catch (err) {
     console.log(err);
     return res.status(500).json({ message: err });
   }
   if (!recipes) {
-    return res.status(404).json({ message: 'No Recipes Found' });
+    return res.status(404).json({ message: 'No Recipe Found' });
   }
   return res.status(200).json({ recipes });
 };
@@ -40,7 +41,7 @@ exports.addRecipe = async (req, res, next) => {
     const session = await mongoose.startSession();
     session.startTransaction();
     await recipe.save({ session });
-    existingUser.blogs.push(recipe);
+    existingUser.recipes.push(recipe);
     await existingUser.save({ session });
     await session.commitTransaction();
   } catch (err) {
@@ -59,6 +60,7 @@ exports.updateRecipe = async (req, res, next) => {
       title,
       description,
     });
+    console.log(recipe, 'Update')
   } catch (err) {
     console.log(err);
     return res.status(500).json({ message: err });
@@ -89,7 +91,7 @@ exports.deleteRecipe = async (req, res, next) => {
   let recipe;
   try {
     recipe = await Recipe.findByIdAndRemove(id).populate('user');
-    await recipe.user.blogs.pull(recipe);
+    await recipe.user.recipes.pull(recipe);
     await recipe.user.save();
   } catch (err) {
     console.log(err);
