@@ -84,3 +84,20 @@ exports.getById = async (req, res, next) => {
   return res.status(200).json({ recipe });
 };
 
+exports.deleteRecipe = async (req, res, next) => {
+  const id = req.params.id;
+  let recipe;
+  try {
+    recipe = await Recipe.findByIdAndRemove(id).populate('user');
+    await recipe.user.blogs.pull(recipe);
+    await recipe.user.save();
+  } catch (err) {
+    console.log(err);
+    return res.status(500).json({ message: err });
+  }
+  if (!recipe) {
+    return res.status(500).json({ message: 'Unable to Delete' });
+  }
+  return res.status(200).json({ message: 'Successfully Deleted' });
+};
+
