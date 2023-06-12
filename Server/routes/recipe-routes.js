@@ -9,3 +9,5 @@ recipeRouter.put('/update/:id', updateRecipe);
 recipeRouter.get('/:id', getById);
 recipeRouter.delete('/:id', deleteRecipe);
 recipeRouter.get('/user/:id', getByUserId);
+
+module.exports = recipeRouter;
