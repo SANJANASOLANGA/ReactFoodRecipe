@@ -5,7 +5,7 @@ import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-const AdminRecipe = ({ title, description, imageURL, userName, isUser, id }) => {
+const AdminRecipe = ({ title, description, imageURL, userName, id }) => {
   const navigate = useNavigate();
 
   const handleEdit = (e) => {
@@ -13,7 +13,7 @@ const AdminRecipe = ({ title, description, imageURL, userName, isUser, id }) => 
   };
 
   const deleteRequest = async () => {
-    const res = await axios.delete(`http://localhost:5000/api/blog/${id}`).catch((err) => console.log(err));
+    const res = await axios.delete(`http://localhost:5000/api/recipe/${id}`).catch((err) => console.log(err));
     const data = await res.data;
     return data;
   };
