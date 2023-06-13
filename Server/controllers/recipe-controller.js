@@ -1,12 +1,11 @@
 const mongoose = require('mongoose');
-const Recipe = require('../model/Recipe.js');
+const RecipeModel = require('../model/Recipe.js');
 const User = require('../model/User.js');
 
 exports.getAllRecipes = async (req, res, next) => {
   let recipes;
   try {
-    recipes = await Recipe.find().populate('user');
-    console.log(recipes)
+    recipes = await RecipeModel.find().populate('user');
   } catch (err) {
     console.log(err);
     return res.status(500).json({ message: err });
@@ -22,6 +21,7 @@ exports.addRecipe = async (req, res, next) => {
   let existingUser;
   try {
     existingUser = await User.findById(user);
+    console.log('existingUser is ', existingUser)
   } catch (err) {
     console.log(err);
     return res.status(500).json({ message: err });
@@ -30,7 +30,7 @@ exports.addRecipe = async (req, res, next) => {
     return res.status(400).json({ message: 'Unable to find user' });
   }
 
-  const recipe = new Recipe({
+  const blog = new RecipeModel({
     title,
     description,
     image,
@@ -40,57 +40,55 @@ exports.addRecipe = async (req, res, next) => {
   try {
     const session = await mongoose.startSession();
     session.startTransaction();
-    await recipe.save({ session });
-    existingUser.recipes.push(recipe);
+    await blog.save({ session });
+    existingUser.recipes.push(blog);
     await existingUser.save({ session });
     await session.commitTransaction();
   } catch (err) {
-    console.log(err);
     return res.status(500).json({ message: err });
   }
-  return res.status(200).json({ recipe });
+  return res.status(200).json({ blog });
 };
 
 exports.updateRecipe = async (req, res, next) => {
   const { title, description } = req.body;
-  const recipeId = req.params.id;
-  let recipe;
+  const blogId = req.params.id;
+  let blog;
   try {
-    recipe = await Recipe.findByIdAndUpdate(recipeId, {
+    blog = await RecipeModel.findByIdAndUpdate(blogId, {
       title,
       description,
     });
-    console.log(recipe, 'Update')
   } catch (err) {
     console.log(err);
     return res.status(500).json({ message: err });
   }
-  if (!recipe) {
+  if (!blog) {
     return res.status(500).json({ message: 'Unable to update' });
   }
-  return res.status(200).json({ recipe });
+  return res.status(200).json({ blog });
 };
 
 exports.getById = async (req, res, next) => {
   const id = req.params.id;
-  let recipe;
+  let blog;
   try {
-    recipe = await Recipe.findById(id);
+    blog = await RecipeModel.findById(id);
   } catch (err) {
     console.log(err);
     return res.status(500).json({ message: err });
   }
-  if (!recipe) {
-    return res.status(404).json({ message: 'No Blog Found' });
+  if (!blog) {
+    return res.status(404).json({ message: 'No Recipe Found' });
   }
-  return res.status(200).json({ recipe });
+  return res.status(200).json({ blog });
 };
 
 exports.deleteRecipe = async (req, res, next) => {
   const id = req.params.id;
   let recipe;
   try {
-    recipe = await Recipe.findByIdAndRemove(id).populate('user');
+    recipe = await RecipeModel.findByIdAndRemove(id).populate('user');
     await recipe.user.recipes.pull(recipe);
     await recipe.user.save();
   } catch (err) {
