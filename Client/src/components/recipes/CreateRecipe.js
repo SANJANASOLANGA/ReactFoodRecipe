@@ -28,6 +28,7 @@ const CreateRecipe = () => {
       user: localStorage.getItem('userId'),
     }).catch((err) => console.log(err));
     const data = await res.data;
+    alert('Successfully data added!',data)
     return data;
   };
 
