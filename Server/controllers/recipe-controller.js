@@ -42,9 +42,12 @@ exports.addRecipe = async (req, res, next) => {
     session.startTransaction();
     await blog.save({ session });
     existingUser.recipes.push(blog);
+    console.log('existingUser is ', existingUser)
     await existingUser.save({ session });
     await session.commitTransaction();
   } catch (err) {
+    console.log('existingUser is ', existingUser)
+    console.log('error 1 is ', err);
     return res.status(500).json({ message: err });
   }
   return res.status(200).json({ blog });
