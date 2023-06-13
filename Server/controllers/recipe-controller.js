@@ -30,7 +30,7 @@ exports.addRecipe = async (req, res, next) => {
     return res.status(400).json({ message: 'Unable to find user' });
   }
 
-  const blog = new RecipeModel({
+  const recipe = new RecipeModel({
     title,
     description,
     image,
@@ -40,8 +40,8 @@ exports.addRecipe = async (req, res, next) => {
   try {
     const session = await mongoose.startSession();
     session.startTransaction();
-    await blog.save({ session });
-    existingUser.recipes.push(blog);
+    await recipe.save({ session });
+    existingUser.recipes.push(recipe);
     console.log('existingUser is ', existingUser)
     await existingUser.save({ session });
     await session.commitTransaction();
@@ -50,7 +50,7 @@ exports.addRecipe = async (req, res, next) => {
     console.log('error 1 is ', err);
     return res.status(500).json({ message: err });
   }
-  return res.status(200).json({ blog });
+  return res.status(200).json({ recipe });
 };
 
 exports.updateRecipe = async (req, res, next) => {
