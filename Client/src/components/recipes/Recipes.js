@@ -11,7 +11,7 @@ const Recipes = () => {
   };
 
   useEffect(() => {
-    sendRequest().then((data) => setRecipes(data.blogs));
+    sendRequest().then((data) => setRecipes(data.recipes));
   }, []);
 
   return (
