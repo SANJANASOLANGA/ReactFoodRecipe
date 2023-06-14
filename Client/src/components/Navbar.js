@@ -39,19 +39,15 @@ function NavBar() {
       className={navColour ? "sticky" : "navbar"}
     >
       <Container>
-        <Navbar.Brand href="/userhome" className="d-flex">
-          <img src={logo} className="img-fluid logo" alt="brand" />
-        </Navbar.Brand>
-        <Navbar.Toggle
-          aria-controls="responsive-navbar-nav"
-          onClick={handleToggle}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto" defaultActiveKey="#home">
+              <Nav.Link
+                as={Link}
+                to="/userhome"
+                onClick={handleLinkClick}
+              >
+                <img src={logo} className="img-fluid logo" alt="brand" />
+              </Nav.Link>
               <Nav.Link
                 as={Link}
                 to="/userhome"
