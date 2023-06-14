@@ -9,6 +9,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import logo from "../assets/logo.png";
+import "../style.css";
 
 function NavBarAdmin() {
   const [expand, setExpand] = useState(false);
@@ -27,8 +28,6 @@ function NavBarAdmin() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleToggle = () => setExpand(!expand);
-
   const handleLinkClick = () => setExpand(false);
 
   return (
@@ -39,72 +38,41 @@ function NavBarAdmin() {
       className={navColour ? "sticky" : "navbar"}
     >
       <Container>
-        <Navbar.Brand href="/adminhome" className="d-flex">
-          <img src={logo} className="img-fluid logo" alt="brand" />
-        </Navbar.Brand>
-        <Navbar.Toggle
-          aria-controls="responsive-navbar-nav"
-          onClick={handleToggle}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ms-auto" defaultActiveKey="#home">
-              <Nav.Link
-                as={Link}
-                to="/adminhome"
-                onClick={handleLinkClick}
-              >
-                <AiOutlineHome style={{ marginBottom: "2px", color: 'red' }} />
-                Home
-              </Nav.Link>
-              <Nav.Link
-                as={Link}
-                to="/admin-about"
-                onClick={handleLinkClick}
-              >
-                <AiOutlineUser style={{ marginBottom: "2px", color: 'red' }} />
-                About
-              </Nav.Link>
-              <Nav.Link
-                as={Link}
-                to="/edit-recipes"
-                onClick={handleLinkClick}
-              >
-                <LuEdit
-                  style={{ marginBottom: "2px", color: 'red' }}
-                />
-                {" "}
-                Edit Recipes
-              </Nav.Link>
-              <Nav.Link
-                as={Link}
-                to="/create-receipe"
-                onClick={handleLinkClick}
-              >
-                <CgFileAdd
-                  style={{ marginBottom: "2px", color: 'red' }}
-                />
-                {" "}
-                Add Recipes
-              </Nav.Link>
-              <Nav.Link
-                as={Link}
-                to="/admin-contact"
-                onClick={handleLinkClick}
-              >
-                <ImPhone style={{ marginBottom: "2px", color: 'red' }} /> Contact
-              </Nav.Link>
-              <Nav.Link
-                as={Link}
-                to="/admin-contact"
-                onClick={handleLinkClick}
-              >
-                <FiLogOut style={{ marginBottom: "2px", color: 'red' }} /> Log Out
-              </Nav.Link>
-          </Nav>
+          <div className="navbar-nav ml-auto">
+            <Navbar.Brand href="/adminhome" className="d-flex">
+              <img src={logo} className="logo-image" alt="brand" />
+            </Navbar.Brand>
+            <Nav.Link as={Link} to="/adminhome" onClick={handleLinkClick}>
+              <AiOutlineHome style={{ marginBottom: "2px", color: "red" }} />
+              Home
+            </Nav.Link>
+            <Nav.Link as={Link} to="/admin-about" onClick={handleLinkClick}>
+              <AiOutlineUser style={{ marginBottom: "2px", color: "red" }} />
+              About
+            </Nav.Link>
+            <Nav.Link as={Link} to="/edit-recipes" onClick={handleLinkClick}>
+              <LuEdit
+                style={{ marginBottom: "2px", color: "red" }}
+              />
+              {" "}
+              Edit Recipes
+            </Nav.Link>
+            <Nav.Link
+              as={Link}
+              to="/create-receipe"
+              onClick={handleLinkClick}
+            >
+              <CgFileAdd style={{ marginBottom: "2px", color: "red" }} />
+              Add Recipes
+            </Nav.Link>
+            <Nav.Link as={Link} to="/admin-contact" onClick={handleLinkClick}>
+              <ImPhone style={{ marginBottom: "2px", color: "red" }} /> Contact
+            </Nav.Link>
+            <Nav.Link as={Link} to="/admin-contact" onClick={handleLinkClick}>
+              <FiLogOut style={{ marginBottom: "2px", color: "red" }} /> Log Out
+            </Nav.Link>
+          </div>
         </Navbar.Collapse>
       </Container>
     </Navbar>
