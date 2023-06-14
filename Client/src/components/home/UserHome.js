@@ -18,7 +18,9 @@ export default function UserHome() {
         <Container>
           <div class="container-user">
             <img src={mainUserHome} className="mainUserHome" alt="brand" />
-            <div class="mainUserHome-text">Let's Start Cooking With <br/> Popular Recipes </div>
+            <div class="mainUserHome-text">
+              <a href="/recipes">Let's Start Cooking With <br/> Popular Recipes </a>
+            </div>
           </div>
         </Container>
       </Container>
