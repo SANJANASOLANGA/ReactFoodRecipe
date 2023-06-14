@@ -1,26 +1,28 @@
-const express = require("express");
+const express = require('express');
+const mongoose = require('mongoose');
+const recipeRouter = require('./routes/recipe-routes.js');
+const cors = require('cors');
 
 const app = express();
-const mongoose = require("mongoose");
-app.use(express.json());
-const cors = require("cors")
 app.use(cors());
+app.use(express.json());
+app.use('/api/recipe', recipeRouter);
+
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const JWT_SECRET = "hvdvay6ert72839289()aiyg8t87qt72393293883uhefiuh78ttq3ifi78272jbkj?[]]pou89ywe";
 
-const mongoUrl = "mongodb+srv://sanjanasolangaarachchi:Mu8wKnBqB4zdCU19@cluster0.zf7x54f.mongodb.net/?retryWrites=true&w=majority"
-
 mongoose
-  .connect(mongoUrl, {
-    useNewUrlParser: true,
-  })
+  .connect('mongodb+srv://sanjanasolangaarachchi:WnQMY2bLReIw0LKU@recipe.pmdzzp3.mongodb.net/?retryWrites=true&w=majority')
   .then(() => {
-    console.log("Connected to database");
+    app.listen(5000);
+    console.log('Connected to database');
   })
-  .catch((e) => console.log(e));
+  .catch((err) => {
+    console.log(err);
+  });
 
-require("./userDetails")
+  require("./userDetails")
 
 const User = mongoose.model("UserInfo")
 app.post("/register", async (req, res) => {
@@ -101,6 +103,4 @@ app.post("/register", async (req, res) => {
     }
   });
 
-  app.listen(5000, () => {
-    console.log("Server Started");
-    });
+  
