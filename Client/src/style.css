@@ -74,15 +74,16 @@
   margin-left: auto;
   margin-right: auto;
   width: 80%;
-  height: 40%;
+  max-height: 75vh; 
   justify-content: center;
 }
+
 .container-user {
   position: relative;
   text-align: center;
   color: white;
-  
 }
+
 .mainUserHome-text {
   position: absolute;
   bottom: 10%;
@@ -90,4 +91,28 @@
   font-size: 250%;
   background-color: rgb(64, 42, 20);
   opacity: 0.9
+}
+
+@media only screen and (max-width: 768px) {
+  .mainUserHome {
+    max-height: 80vh; 
+  }
+  
+  .mainUserHome-text {
+    font-size: 200%;
+    bottom: 5%;
+    left: 5%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .mainUserHome {
+    max-height: 90vh; 
+  }
+  
+  .mainUserHome-text {
+    font-size: 150%;
+    bottom: 5%;
+    left: 5%;
+  }
 }
