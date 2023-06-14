@@ -45,11 +45,11 @@ function NavBarAdmin() {
             </Navbar.Brand>
             <Nav.Link as={Link} to="/adminhome" onClick={handleLinkClick}>
               <AiOutlineHome style={{ marginBottom: "2px", color: "red" }} />
-              Home
+              {" "}Home
             </Nav.Link>
             <Nav.Link as={Link} to="/admin-about" onClick={handleLinkClick}>
               <AiOutlineUser style={{ marginBottom: "2px", color: "red" }} />
-              About
+              {" "}About
             </Nav.Link>
             <Nav.Link as={Link} to="/edit-recipes" onClick={handleLinkClick}>
               <LuEdit
@@ -64,13 +64,13 @@ function NavBarAdmin() {
               onClick={handleLinkClick}
             >
               <CgFileAdd style={{ marginBottom: "2px", color: "red" }} />
-              Add Recipes
+              {" "}Add Recipes
             </Nav.Link>
             <Nav.Link as={Link} to="/admin-contact" onClick={handleLinkClick}>
-              <ImPhone style={{ marginBottom: "2px", color: "red" }} /> Contact
+              <ImPhone style={{ marginBottom: "2px", color: "red" }} /> {" "}Contact
             </Nav.Link>
             <Nav.Link as={Link} to="/admin-contact" onClick={handleLinkClick}>
-              <FiLogOut style={{ marginBottom: "2px", color: "red" }} /> Log Out
+              <FiLogOut style={{ marginBottom: "2px", color: "red" }} /> {" "}Log Out
             </Nav.Link>
           </div>
         </Navbar.Collapse>
