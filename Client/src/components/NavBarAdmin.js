@@ -44,33 +44,30 @@ function NavBarAdmin() {
               <img src={logo} className="logo-image" alt="brand" />
             </Navbar.Brand>
             <Nav.Link as={Link} to="/adminhome" onClick={handleLinkClick}>
-              <AiOutlineHome style={{ marginBottom: "2px", color: "red" }} />
+              <AiOutlineHome/>
               {" "}Home
             </Nav.Link>
             <Nav.Link as={Link} to="/admin-about" onClick={handleLinkClick}>
-              <AiOutlineUser style={{ marginBottom: "2px", color: "red" }} />
+              <AiOutlineUser/>
               {" "}About
             </Nav.Link>
             <Nav.Link as={Link} to="/edit-recipes" onClick={handleLinkClick}>
-              <LuEdit
-                style={{ marginBottom: "2px", color: "red" }}
-              />
-              {" "}
-              Edit Recipes
+              <LuEdit/>
+              {" "}Edit Recipes
             </Nav.Link>
             <Nav.Link
               as={Link}
               to="/create-receipe"
               onClick={handleLinkClick}
             >
-              <CgFileAdd style={{ marginBottom: "2px", color: "red" }} />
+              <CgFileAdd/>
               {" "}Add Recipes
             </Nav.Link>
             <Nav.Link as={Link} to="/admin-contact" onClick={handleLinkClick}>
-              <ImPhone style={{ marginBottom: "2px", color: "red" }} /> {" "}Contact
+              <ImPhone/> {" "}Contact
             </Nav.Link>
             <Nav.Link as={Link} to="/admin-contact" onClick={handleLinkClick}>
-              <FiLogOut style={{ marginBottom: "2px", color: "red" }} /> {" "}Log Out
+              <FiLogOut/> {" "}Log Out
             </Nav.Link>
           </div>
         </Navbar.Collapse>
