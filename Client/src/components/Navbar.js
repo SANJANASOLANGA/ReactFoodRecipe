@@ -8,7 +8,6 @@ import { TbToolsKitchen2 } from "react-icons/tb";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
-import Button from "react-bootstrap/Button";
 import logo from "../assets/logo.png";
 import "../style.css"
 function NavBar() {
@@ -53,7 +52,6 @@ function NavBar() {
         </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto" defaultActiveKey="#home">
-            <Nav.Item>
               <Nav.Link
                 as={Link}
                 to="/userhome"
@@ -62,9 +60,6 @@ function NavBar() {
                 <AiOutlineHome style={{ marginBottom: "2px", color: 'red' }} />
                 Home
               </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
               <Nav.Link
                 as={Link}
                 to="/about"
@@ -73,9 +68,6 @@ function NavBar() {
                 <AiOutlineUser style={{ marginBottom: "2px", color: 'red' }} />
                 About
               </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
               <Nav.Link
                 as={Link}
                 to="/recipes"
@@ -87,9 +79,6 @@ function NavBar() {
                 {" "}
                 Recipes
               </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
               <Nav.Link
                 as={Link}
                 to="/downloadRecipes"
@@ -98,9 +87,6 @@ function NavBar() {
                 <FiDownload style={{ marginBottom: "2px", color: 'red' }} />
                 Download
               </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
               <Nav.Link
                 as={Link}
                 to="/contact"
@@ -108,9 +94,6 @@ function NavBar() {
               >
                 <ImPhone style={{ marginBottom: "2px", color: 'red' }} /> Contact
               </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
               <Nav.Link
                 as={Link}
                 to="/sign-in"
@@ -118,22 +101,11 @@ function NavBar() {
               >
                 <CgFileAdd style={{ marginBottom: "2px", color: 'red' }} /> Add Recipe
               </Nav.Link>
-            </Nav.Item>
-
-            {/* <Nav.Item className="fork-btn">
-              <Button
-                href="https://github.com/SANJANASOLANGA"
-                target="_blank"
-                className="fork-btn-inner"
-              >
-                <CgGitFork style={{ fontSize: "1.2em" }} />{" "}
-                <AiFillStar style={{ fontSize: "1.1em", color: 'red' }} />
-              </Button>
-            </Nav.Item> */}
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
+  
   );
 }
 
