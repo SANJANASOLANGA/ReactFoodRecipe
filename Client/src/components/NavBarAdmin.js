@@ -8,7 +8,6 @@ import { LuEdit } from "react-icons/lu";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
-import Button from "react-bootstrap/Button";
 import logo from "../assets/logo.png";
 
 function NavBarAdmin() {
@@ -53,7 +52,6 @@ function NavBarAdmin() {
         </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto" defaultActiveKey="#home">
-            <Nav.Item>
               <Nav.Link
                 as={Link}
                 to="/adminhome"
@@ -62,9 +60,6 @@ function NavBarAdmin() {
                 <AiOutlineHome style={{ marginBottom: "2px", color: 'red' }} />
                 Home
               </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
               <Nav.Link
                 as={Link}
                 to="/admin-about"
@@ -73,9 +68,6 @@ function NavBarAdmin() {
                 <AiOutlineUser style={{ marginBottom: "2px", color: 'red' }} />
                 About
               </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
               <Nav.Link
                 as={Link}
                 to="/edit-recipes"
@@ -87,9 +79,6 @@ function NavBarAdmin() {
                 {" "}
                 Edit Recipes
               </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
               <Nav.Link
                 as={Link}
                 to="/create-receipe"
@@ -101,9 +90,6 @@ function NavBarAdmin() {
                 {" "}
                 Add Recipes
               </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
               <Nav.Link
                 as={Link}
                 to="/admin-contact"
@@ -111,9 +97,6 @@ function NavBarAdmin() {
               >
                 <ImPhone style={{ marginBottom: "2px", color: 'red' }} /> Contact
               </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
               <Nav.Link
                 as={Link}
                 to="/admin-contact"
@@ -121,18 +104,6 @@ function NavBarAdmin() {
               >
                 <FiLogOut style={{ marginBottom: "2px", color: 'red' }} /> Log Out
               </Nav.Link>
-            </Nav.Item>
-
-            {/* <Nav.Item className="fork-btn">
-              <Button
-                href="https://github.com/SANJANASOLANGA"
-                target="_blank"
-                className="fork-btn-inner"
-              >
-                <CgGitFork style={{ fontSize: "1.2em" }} />{" "}
-                <AiFillStar style={{ fontSize: "1.1em", color: 'red' }} />
-              </Button>
-            </Nav.Item> */}
           </Nav>
         </Navbar.Collapse>
       </Container>
