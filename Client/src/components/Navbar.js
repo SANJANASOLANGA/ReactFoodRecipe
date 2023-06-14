@@ -45,33 +45,30 @@ function NavBar() {
             </Navbar.Brand>
 
             <Nav.Link as={Link} to="/userhome" onClick={handleLinkClick}>
-              <AiOutlineHome style={{ marginBottom: "2px", color: "red" }} />
+              <AiOutlineHome/>
               {" "}Home
             </Nav.Link>
             <Nav.Link as={Link} to="/about" onClick={handleLinkClick}>
-              <AiOutlineUser style={{ marginBottom: "2px", color: "red" }} />
+              <AiOutlineUser/>
               {" "}About
             </Nav.Link>
             <Nav.Link as={Link} to="/recipes" onClick={handleLinkClick}>
-              <TbToolsKitchen2
-                style={{ marginBottom: "2px", color: "red" }}
-              />
-              {" "}
-              Recipes
+              <TbToolsKitchen2/>
+              {" "}Recipes
             </Nav.Link>
             <Nav.Link
               as={Link}
               to="/downloadRecipes"
               onClick={handleLinkClick}
             >
-              <FiDownload style={{ marginBottom: "2px", color: "red" }} />
+              <FiDownload/>
               {" "}Download
             </Nav.Link>
             <Nav.Link as={Link} to="/contact" onClick={handleLinkClick}>
-              <ImPhone style={{ marginBottom: "2px", color: "red" }} /> {" "}Contact
+              <ImPhone/> {" "}Contact
             </Nav.Link>
             <Nav.Link as={Link} to="/sign-in" onClick={handleLinkClick}>
-              <CgFileAdd style={{ marginBottom: "2px", color: "red" }} /> {" "}Add Recipe
+              <CgFileAdd/> {" "}Add Recipe
             </Nav.Link>
           </div>
         </Navbar.Collapse>
