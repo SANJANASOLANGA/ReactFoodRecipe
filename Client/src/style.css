@@ -11,9 +11,7 @@
 }
 
 .navbar-nav {
-  margin-left: auto;
   display: flex;
-  flex-direction: row;
   align-items: center;
 }
 
@@ -51,15 +49,20 @@
   }
 }
 
-.navbar-brand + .navbar-nav {
-  margin-left: 2rem;
+.navbar-brand {
+  margin-right: auto;
 }
 
-.nav-link:first-child {
-  margin-left: 0;
+.nav-link {
+  margin-left: auto;
 }
 
 .nav-link img {
   margin-right: 1rem;
   height: 30px;
+}
+
+.logo-image {
+  width: 40px;
+  height: auto;
 }
