@@ -5,6 +5,7 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col, Alert } from "react-bootstrap";
 import mainUserHome from "../../assets/mainUserHome.jpeg";
 import downloadRecipe from "../../assets/downloadRecipe.jpeg";
+import AddRecipe from "../../assets/AddRecipe.jpeg";
 
 export default function UserHome() {
 
@@ -27,6 +28,12 @@ export default function UserHome() {
             <img src={downloadRecipe} className="downloadRecipe" alt="brand" />
             <div class="downloadRecipe-text">
               <a href="/download-recipes">Download Your <br/> Favourite Recipes </a>
+            </div>
+          </div>
+          <div class="container-user-download">
+            <img src={AddRecipe} className="downloadRecipe" alt="brand" />
+            <div class="downloadRecipe-text">
+              <a href="/download-recipes">Add Your <br/> Delicious Recipes </a>
             </div>
           </div>
         </Container>
