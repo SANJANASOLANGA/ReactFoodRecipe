@@ -81,7 +81,6 @@
 .container-user {
   position: relative;
   text-align: center;
-  color: white;
 }
 
 .mainUserHome-text {
@@ -115,4 +114,25 @@
     bottom: 5%;
     left: 5%;
   }
+}
+
+.container-user-download{  
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.downloadRecipe{
+  display: block;
+  margin-left: 5%;
+  margin-top: 5%;
+  width: 50%;
+  max-height: auto; 
+  justify-content: center;
+}
+
+.downloadRecipe-text{
+  position: absolute;
+  bottom: 10%;
+  font-size: 200%;
 }
