@@ -103,41 +103,15 @@
     bottom: 5%;
     left: 5%;
   }
-
-  .downloadRecipe {
-    max-height: 80vh;
-  }
-
-  .downloadRecipe-text {
-    font-size: 200%;
-    bottom: 5%;
-    left: 5%;
-  }
 }
 
 @media only screen and (max-width: 480px) {
   .mainUserHome {
     max-height: 90vh;
   }
-
-  .mainUserHome-text {
-    font-size: 150%;
-    bottom: 5%;
-    left: 5%;
-  }
-
-  .downloadRecipe {
-    max-height: 90vh;
-  }
-
-  .downloadRecipe-text {
-    font-size: 150%;
-    bottom: 5%;
-    left: 5%;
-  }
 }
 
-.container-user-download {
+ .container-user-download {
   position: relative;
   text-align: center;
   color: white;
@@ -161,4 +135,29 @@
   background-color: rgb(64, 42, 20);
   opacity: 0.9;
   padding: 1%;
+} 
+
+@media only screen and (max-width: 768px) {
+  .downloadRecipe {
+    margin: 3% 5%;
+    width: 40%;
+  }
+
+  .downloadRecipe-text {
+    font-size: 200%;
+    max-height: 35%;
+    overflow: auto;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .downloadRecipe {
+    width: 55%;
+  }
+
+  .downloadRecipe-text {
+    font-size: 100%;
+    max-height: 100%;
+    overflow: auto;
+  }
 }
