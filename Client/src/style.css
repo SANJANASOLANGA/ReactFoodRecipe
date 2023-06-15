@@ -111,7 +111,7 @@
   }
 }
 
- .container-user-download {
+.container-user-download {
   position: relative;
   text-align: center;
   color: white;
@@ -170,17 +170,24 @@
 
 .addRecipe {
   display: block;
-  margin-left: 5%;
+  margin-left: auto;
   margin-top: 3%;
+  margin-right: 5%;
   width: 55%;
   max-height: auto;
   justify-content: center;
 }
 
+.addRecipe img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
 .addRecipe-text {
   position: absolute;
   bottom: 50%;
-  left: 80%;
+  left: 15%;
   transform: translate(-50%, 50%);
   font-size: 250%;
   background-color: rgb(64, 42, 20);
@@ -190,14 +197,22 @@
 
 @media only screen and (max-width: 768px) {
   .addRecipe {
-    margin: 3% 5%;
+    margin: 3% 5% 3% 5%;
     width: 40%;
+  }
+
+  .addRecipe img {
+    max-height: 30vh;
   }
 
   .addRecipe-text {
     font-size: 200%;
     max-height: 35%;
     overflow: auto;
+    bottom: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 
@@ -206,9 +221,17 @@
     width: 55%;
   }
 
+  .addRecipe img {
+    max-height: 50vh;
+  }
+
   .addRecipe-text {
     font-size: 100%;
     max-height: 100%;
     overflow: auto;
+    bottom: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
