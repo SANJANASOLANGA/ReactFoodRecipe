@@ -235,3 +235,31 @@
     transform: translate(-50%, -50%);
   }
 }
+
+/* About Us - User */
+
+.about-page {
+  background-image: url('../src/assets/backgroundImage.svg');
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-page-text {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2rem;
+  max-width: 800px;
+  text-align: justify;
+}
+
+.about-page-text h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.about-page-text p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
