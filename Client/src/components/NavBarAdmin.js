@@ -64,9 +64,6 @@ function NavBarAdmin() {
               {" "}Edit Recipes
             </Nav.Link>
             <Nav.Link as={Link} to="/admin-contact" onClick={handleLinkClick}>
-              <ImPhone/> {" "}Contact
-            </Nav.Link>
-            <Nav.Link as={Link} to="/admin-contact" onClick={handleLinkClick}>
               <FiLogOut/> {" "}Log Out
             </Nav.Link>
           </div>
