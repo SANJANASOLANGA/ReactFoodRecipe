@@ -30,10 +30,10 @@ export default function UserHome() {
               <a href="/download-recipes">Download Your <br/> Favourite Recipes </a>
             </div>
           </div>
-          <div class="container-user-download">
-            <img src={AddRecipe} className="downloadRecipe" alt="brand" />
-            <div class="downloadRecipe-text">
-              <a href="/download-recipes">Add Your <br/> Delicious Recipes </a>
+          <div class="container-user-add">
+            <img src={AddRecipe} className="addRecipe" alt="brand" />
+            <div class="addRecipe-text">
+              <a href="/sign-in">Add Your <br/> Delicious Recipes </a>
             </div>
           </div>
         </Container>
