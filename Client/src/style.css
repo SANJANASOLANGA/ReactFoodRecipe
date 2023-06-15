@@ -69,12 +69,12 @@
 
 /* UserHome Styles */
 
-.mainUserHome{
+.mainUserHome {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 80%;
-  max-height: 75vh; 
+  max-height: 75vh;
   justify-content: center;
 }
 
@@ -94,10 +94,20 @@
 
 @media only screen and (max-width: 768px) {
   .mainUserHome {
-    max-height: 80vh; 
+    max-height: 80vh;
   }
-  
+
   .mainUserHome-text {
+    font-size: 200%;
+    bottom: 5%;
+    left: 5%;
+  }
+
+  .downloadRecipe {
+    max-height: 80vh;
+  }
+
+  .downloadRecipe-text {
     font-size: 200%;
     bottom: 5%;
     left: 5%;
@@ -106,33 +116,48 @@
 
 @media only screen and (max-width: 480px) {
   .mainUserHome {
-    max-height: 90vh; 
+    max-height: 90vh;
   }
-  
+
   .mainUserHome-text {
+    font-size: 150%;
+    bottom: 5%;
+    left: 5%;
+  }
+
+  .downloadRecipe {
+    max-height: 90vh;
+  }
+
+  .downloadRecipe-text {
     font-size: 150%;
     bottom: 5%;
     left: 5%;
   }
 }
 
-.container-user-download{  
+.container-user-download {
   position: relative;
   text-align: center;
   color: white;
 }
 
-.downloadRecipe{
+.downloadRecipe {
   display: block;
   margin-left: 5%;
   margin-top: 5%;
   width: 50%;
-  max-height: auto; 
+  max-height: auto;
   justify-content: center;
 }
 
-.downloadRecipe-text{
+.downloadRecipe-text {
   position: absolute;
-  bottom: 10%;
-  font-size: 200%;
+  bottom: 50%;
+  left: 80%;
+  transform: translate(-50%, 50%);
+  font-size: 250%;
+  background-color: rgb(64, 42, 20);
+  opacity: 0.9;
+  padding: 1rem;
 }
