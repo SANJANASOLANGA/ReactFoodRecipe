@@ -15,6 +15,7 @@ import AdminContact from './components/contact/AdminContact'
 import CreateReceipe from './components/recipes/CreateRecipe';
 import EditRecipe from './components/recipes/EditRecipe'
 import UpdateRecipe from './components/recipes/UpdateRecipe';
+import AllRecipesAdmin from './components/recipes/AllRecipesAdmin'
 
 const App = () => {
   return (
@@ -37,6 +38,7 @@ const App = () => {
               <Route path='/create-receipe' element={<CreateReceipe />} />
               <Route path='/edit-recipes' element={<EditRecipe />} />
               <Route path="/update-recipes/:id" element={<UpdateRecipe />}/>
+              <Route path="/recipes-admin" element={<AllRecipesAdmin />}/>
             </Routes>
         </div>
       </Router>
