@@ -47,13 +47,9 @@ function NavBarAdmin() {
               <AiOutlineHome/>
               {" "}Home
             </Nav.Link>
-            <Nav.Link as={Link} to="/admin-about" onClick={handleLinkClick}>
+            <Nav.Link as={Link} to="/recipes-admin" onClick={handleLinkClick}>
               <AiOutlineUser/>
-              {" "}About
-            </Nav.Link>
-            <Nav.Link as={Link} to="/edit-recipes" onClick={handleLinkClick}>
-              <LuEdit/>
-              {" "}Edit Recipes
+              {" "}Recipes
             </Nav.Link>
             <Nav.Link
               as={Link}
@@ -62,6 +58,10 @@ function NavBarAdmin() {
             >
               <CgFileAdd/>
               {" "}Add Recipes
+            </Nav.Link>
+            <Nav.Link as={Link} to="/edit-recipes" onClick={handleLinkClick}>
+              <LuEdit/>
+              {" "}Edit Recipes
             </Nav.Link>
             <Nav.Link as={Link} to="/admin-contact" onClick={handleLinkClick}>
               <ImPhone/> {" "}Contact
