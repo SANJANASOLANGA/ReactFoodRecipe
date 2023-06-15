@@ -26,7 +26,7 @@ export default function UserHome() {
           <div class="container-user-download">
             <img src={downloadRecipe} className="downloadRecipe" alt="brand" />
             <div class="downloadRecipe-text">
-              <a href="/download-recipes">Let's Start Cooking With <br/> Popular Recipes </a>
+              <a href="/download-recipes">Download Your <br/> Favourite Recipes </a>
             </div>
           </div>
         </Container>
