@@ -44,10 +44,10 @@ const AdminRecipe = ({ title, description, imageURL, id }) => {
 
         <Box display={'flex'}>
           <IconButton onClick={handleEdit} sx={{ marginLeft: 'auto' }}>
-            <EditIcon color="warning" />
+            <EditIcon color="warning" titleAccess='Edit Recipes'/>
           </IconButton>
           <IconButton onClick={handleDelete}>
-            <DeleteForeverIcon color="error" />
+            <DeleteForeverIcon color="error" titleAccess='Delete Recipes'/>
           </IconButton>
         </Box>
 
