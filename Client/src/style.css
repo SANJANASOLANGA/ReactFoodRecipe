@@ -370,7 +370,7 @@
 }
 
 .btn_ac_btn:hover {
-  background-color:rgb(232, 116, 44);
+  background-color:#e8742c;
   color: white;
 }
 
@@ -514,7 +514,7 @@ a {
 }
 
 .form-container button[type="submit"] {
-  background-color: red;
+  background-color: #a68d6c;
   color: white;
   padding: 12px 20px;
   border: none;
@@ -523,7 +523,7 @@ a {
 }
 
 .form-container button[type="submit"]:hover {
-  background-color: #45a049;
+  background-color: #e8742c;
 }
 
 .form-container p {
@@ -539,7 +539,7 @@ a {
 .auth {
     background-image: url('../src/assets/backgroundImage.svg');
     background-size: cover;
-    height: 100vh;
+    height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
