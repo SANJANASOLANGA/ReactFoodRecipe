@@ -17,19 +17,21 @@ const Recipes = () => {
 
   return (
     <div>
-      <NavBar/>
-      {recipes &&
-        recipes.map((recipe, index) => (
-          <UserRecipe
-            key={index}
-            id={recipe._id}
-            isUser={localStorage.getItem('userId') === recipe.user._id}
-            title={recipe.title}
-            description={recipe.description}
-            imageURL={recipe.image}
-            userName={recipe.user.name}
-          />
-        ))}
+      <NavBar />
+      <div className='recipe-page'>
+        {recipes &&
+          recipes.map((recipe, index) => (
+            <UserRecipe
+              key={index}
+              id={recipe._id}
+              isUser={localStorage.getItem('userId') === recipe.user._id}
+              title={recipe.title}
+              description={recipe.description}
+              imageURL={recipe.image}
+              userName={recipe.user.name}
+            />
+          ))}
+      </div>
     </div>
   );
 };
