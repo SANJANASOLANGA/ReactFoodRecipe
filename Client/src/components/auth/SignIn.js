@@ -36,7 +36,7 @@ export default class Login extends Component {
           window.localStorage.setItem("loggedIn", true);
 
           window.location.href = "./userDetails"
-        } else if (data.error === "User Not found"){
+        } else if (data.error === "User Not found") {
           alert("User Not Found! Enter a valid email");
         } else {
           alert("Something went wrong");
@@ -47,37 +47,41 @@ export default class Login extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <h6>Are you a admin? Please Sign In first to Add Recipe</h6>
-        <h3>Sign In</h3>
+      <div>
+        <form className="form-container" onSubmit={this.handleSubmit}>
+          <h6 className="form-container__subtitle">Are you a admin? Please Sign In first to Add Recipe</h6>
+          <h3 className="form-container__title">Sign In</h3>
 
-        <div>
-          <label>Email address</label>
-          <input
-            type="email"
-            placeholder="Enter email"
-            onChange={(e) => this.setState({ email: e.target.value })}
-          />
-        </div>
+          <div>
+            <label className="form-container__label">Email address</label>
+            <input
+              type="email"
+              placeholder="Enter email"
+              onChange={(e) => this.setState({ email: e.target.value })}
+              className="form-container__input"
+            />
+          </div>
 
-        <div>
-          <label>Password</label>
-          <input
-            type="password"
-            placeholder="Enter password"
-            onChange={(e) => this.setState({ password: e.target.value })}
-          />
-        </div>
+          <div>
+            <label className="form-container__label">Password</label>
+            <input
+              type="password"
+              placeholder="Enter password"
+              onChange={(e) => this.setState({ password: e.target.value })}
+              className="form-container__input"
+            />
+          </div>
 
-        <div>
-          <button type="submit">
-            Submit
-          </button>
-        </div>
-        <p>
-          Don't have an account? <a href="/sign-up"><span style={{color:"black"}}>Sign Up</span></a>
-        </p>
-      </form>
+          <div>
+            <button type="submit" className="form-container__submit-button">
+              Submit
+            </button>
+          </div>
+          <p>
+            Don't have an account? <a href="/sign-up" className="form-container__signup-link"><span>Sign Up</span></a>
+          </p>
+        </form>
+      </div>
     )
   }
 }
