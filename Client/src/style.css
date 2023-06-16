@@ -474,3 +474,61 @@ a {
   background-size: cover;
   background-attachment: fixed;
 }
+
+/* Sign In */
+
+.form-container {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.form-container h6 {
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.form-container h3 {
+  font-size: 24px;
+  margin-top: 0;
+}
+
+.form-container label {
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+.form-container input[type="email"],
+.form-container input[type="password"] {
+  width: 100%;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form-container button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-container button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.form-container p {
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.form-container a {
+  color: black;
+  text-decoration: none;
+}
+
