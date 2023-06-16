@@ -6,6 +6,8 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const AdminRecipe = ({ title, description, imageURL, id }) => {
+  const bulletPoints = description.split('•').filter(point => point.trim() !== '');
+
   const navigate = useNavigate();
 
   const handleEdit = (e) => {
@@ -50,12 +52,17 @@ const AdminRecipe = ({ title, description, imageURL, id }) => {
         <CardHeader
           title={title}
         />
-        <CardMedia component="img" height="194" image={imageURL} alt="Recipe" />
+        <CardMedia style={{ height: "250px", paddingTop: "2%" }}component="img" image={imageURL} alt="Recipe" title={title} />
         <CardContent>
-          <hr />
-          <br />
           <Typography variant="body2" color="text.secondary">
-            {description}
+            {bulletPoints.map((point, index) => (
+              <div key={index}>
+                <Typography variant="body2" color="text.secondary">
+                  • {point.trim()}
+                </Typography>
+                <br />
+              </div>
+            ))}
           </Typography>
         </CardContent>
       </Card>
