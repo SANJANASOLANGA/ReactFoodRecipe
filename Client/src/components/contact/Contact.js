@@ -51,11 +51,11 @@ export const Contact = () => {
         (error) => {
           console.log(error.text);
           setFormdata({
-            alertmessage: `Failed to send! ${error.text}`,
+            alertmessage: `Faild to send!,${error.text}`,
             variant: "danger",
             show: true,
           });
-          document.getElementsByClassName("sec_sp co_alert")[0].scrollIntoView();
+          document.getElementsByClassName("co_alert")[0].scrollIntoView();
         }
       );
   };
@@ -76,21 +76,21 @@ export const Contact = () => {
           <title>{meta.title} | Contact</title>
           <meta name="description" content={meta.description} />
         </Helmet>
-        <Row>
+        <Row className="sec_sp">
           <Col lg="12">
             <Alert
               variant={formData.variant}
-              className={`sec_sp co_alert ${
+              className={`rounded-0 co_alert ${
                 formData.show ? "d-block" : "d-none"
               }`}
               onClose={() => setFormdata({ show: false })}
               dismissible
             >
-              <p className="sec_sp co_alert">{formData.alertmessage}</p>
+              <p className="my-0">{formData.alertmessage}</p>
             </Alert>
           </Col>
           <Col lg="5" className="contact_details">
-            <h3>Get In Touch</h3>
+            <h3 style={{ fontSize: "2.1em", paddingBottom: "20px"}}>Get In <strong className="purple">Touch</strong></h3>
             <address>
               <strong>Email:</strong>{" "}
               <a href={`mailto:${contactConfig.YOUR_EMAIL}`}>
@@ -108,12 +108,12 @@ export const Contact = () => {
             </address>
             <p>{contactConfig.description}</p>
           </Col>
-          <Col lg="7">
+          <Col lg="7" className="d-flex align-items-center">
             <form onSubmit={handleSubmit} className="contact__form">
               <Row>
                 <Col lg="6">
                   <input
-                    className="contact__form"
+                    className="form-control"
                     id="name"
                     name="name"
                     placeholder="Name"
@@ -123,7 +123,7 @@ export const Contact = () => {
                     onChange={handleChange}
                   />
                 </Col>
-                <Col lg="6" className="contact__form">
+                <Col lg="6">
                   <input
                     className="form-control rounded-0"
                     id="email"
@@ -137,7 +137,6 @@ export const Contact = () => {
                 </Col>
               </Row>
               <textarea
-                className="contact__form"
                 id="message"
                 name="message"
                 placeholder="Message"
@@ -161,7 +160,7 @@ export const Contact = () => {
           <Col md={12} className="home-about-social" style={{marginBottom: 35, marginTop:35}}>
             <h1>FIND US ON</h1>
             <p>
-              Feel free to <span className="purple">connect</span> with us
+              Feel free to connect with us
             </p>
             <ul className="home-about-social-links">
               <li className="social-icons">
@@ -169,7 +168,7 @@ export const Contact = () => {
                   href="https://github.com/SANJANASOLANGA"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour home-social-icons"
+                  className="icon-colour  home-social-icons"
                 >
                   <AiFillGithub />
                 </a>
@@ -179,7 +178,7 @@ export const Contact = () => {
                   href="https://twitter.com/sanjana_solanga"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour home-social-icons"
+                  className="icon-colour  home-social-icons"
                 >
                   <AiOutlineTwitter />
                 </a>
@@ -189,7 +188,7 @@ export const Contact = () => {
                   href="https://www.linkedin.com/in/sanjana-solanga-arachchi/"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour home-social-icons"
+                  className="icon-colour  home-social-icons"
                 >
                   <FaLinkedinIn />
                 </a>
