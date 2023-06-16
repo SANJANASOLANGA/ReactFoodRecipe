@@ -411,3 +411,8 @@
 .home-about-social-links li a:hover {
   color: rgb(232, 116, 44);
 }
+
+a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
