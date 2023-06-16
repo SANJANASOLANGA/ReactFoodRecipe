@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import AdminRecipe from '../recipes/AdminRecipe';
+import NavBarAdmin from '../NavBarAdmin';
 
 const EditRecipes = () => {
   const [recipes, setRecipes] = useState([]);
@@ -16,6 +17,7 @@ const EditRecipes = () => {
 
   return (
     <div>
+      <NavBarAdmin/>
       {recipes &&
         recipes.map((recipe, index) => (
           <AdminRecipe
