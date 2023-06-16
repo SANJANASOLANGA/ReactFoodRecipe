@@ -16,14 +16,15 @@ const UserRecipe = ({ title, description, imageURL }) => {
           ':hover': {
             boxShadow: '5px 5px 10px #ccc',
           },
-          backgroundColor:'#54360f',          
+          backgroundColor:'#402a14',
+          opacity:0.9          
         }}
       >
         <CardHeader
           title={title}
           style={{color: 'white'}}
         />
-        <CardMedia style={{ height: "250px", paddingTop: "2%", color: 'white' }}component="img" image={imageURL} alt="Recipe" title={title} />
+        <CardMedia style={{ height: "250px", paddingTop: "2%", color: 'white', opacity:1 }}component="img" image={imageURL} alt="Recipe" title={title} />
         <CardContent>
           <Typography variant="body2" color="text.secondary">
             {bulletPoints.map((point, index) => (
