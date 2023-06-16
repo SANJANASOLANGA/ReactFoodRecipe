@@ -28,7 +28,7 @@ const Recipes = () => {
         </Helmet>
       </Container>
 
-      <div>
+      <div className='recipe-page'>
         {recipes &&
           recipes.map((recipe, index) => (
             <UserRecipe
