@@ -93,7 +93,7 @@ export const Contact = () => {
             <h3 style={{ fontSize: "2.1em", paddingBottom: "20px"}}>Get In <strong className="purple">Touch</strong></h3>
             <address>
               <strong>Email:</strong>{" "}
-              <a href={`mailto:${contactConfig.YOUR_EMAIL}`}>
+              <a href={`mailto:${contactConfig.YOUR_EMAIL}`} style={{ color: 'black'}}>
                 {contactConfig.YOUR_EMAIL}
               </a>
               <br />
