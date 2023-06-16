@@ -18,8 +18,9 @@ const UserRecipe = ({ title, description, imageURL }) => {
       >
         <CardHeader
           title={title}
+          subheader={imageURL}
         />
-        <CardMedia component="img" height="194" image={imageURL} alt="Recipe" />
+        <CardMedia style={{ height: "250px", paddingTop: "2%" }}component="img" image={imageURL} alt="Recipe" title={title} />
         <CardContent>
           <hr />
           <br />
