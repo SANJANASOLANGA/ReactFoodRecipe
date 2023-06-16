@@ -27,6 +27,10 @@ const RecipeDetail = () => {
     return data;
   }
 
+  const handleCancel = (e) => {
+    navigate("/edit-recipes");
+  };
+
   useEffect(() => {
     fetchDetails().then(data => {
       setBlog(data.blog)
@@ -70,6 +74,9 @@ const RecipeDetail = () => {
             <div style={{ display: "flex", position: 'relative', justifyContent: 'center', alignItems: 'center' }}>
               <Button className='form-container__submit-button' style={{ width: '30%', height: '27px' }} variant="contained" type="submit">
                 Submit
+              </Button>
+              <Button className='form-container__submit-button' style={{ width: '30%', height: '27px', marginInlineStart: '5%' }} variant="contained" type="submit" onClick={handleCancel}>
+                Back
               </Button>
             </div>
           </Box>
