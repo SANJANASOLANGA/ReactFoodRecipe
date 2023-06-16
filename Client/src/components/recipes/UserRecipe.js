@@ -1,7 +1,7 @@
 import React from 'react';
-import { Avatar, Card, CardContent, CardHeader, CardMedia, Typography } from '@mui/material';
+import { Card, CardContent, CardHeader, CardMedia, Typography } from '@mui/material';
 
-const UserRecipe = ({ title, description, imageURL, userName }) => {
+const UserRecipe = ({ title, description, imageURL }) => {
   return (
     <div>
       <Card
@@ -18,14 +18,13 @@ const UserRecipe = ({ title, description, imageURL, userName }) => {
       >
         <CardHeader
           title={title}
-          // subheader="Date"
         />
         <CardMedia component="img" height="194" image={imageURL} alt="Recipe" />
         <CardContent>
           <hr />
           <br />
           <Typography variant="body2" color="text.secondary">
-            <b>{userName}</b>: {description}
+            {description}
           </Typography>
         </CardContent>
       </Card>
