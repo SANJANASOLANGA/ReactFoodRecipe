@@ -7,7 +7,7 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import { meta } from "../contact/content_option";
 import { Container } from "react-bootstrap";
 
-const labelStyles = { mb: 1, mt: 2, fontSize: '24px', fontWeight: 'bold' };
+const labelStyles = { color: 'white', mb: 1, mt: 2, fontSize: '20px' };
 
 const CreateRecipe = () => {
   const navigate = useNavigate();
@@ -51,13 +51,11 @@ const CreateRecipe = () => {
           <title>{meta.title} | Add Recipes</title>
         </Helmet>
       </Container>
-      <div>
-        <form onSubmit={handleSubmit}>
+      <div className='auth'>
+        <form className="form-container" style={{width: '250%'}} onSubmit={handleSubmit}>
           <Box
             border={3}
-            borderColor="#29A0B1"
             borderRadius={10}
-            boxShadow="10px 10px 20px #ccc"
             padding={3}
             margin="auto"
             marginTop={3}
@@ -65,8 +63,8 @@ const CreateRecipe = () => {
             flexDirection="column"
             width="80%"
           >
-            <Typography fontWeight="bold" padding={3} color="grey" variant="h2" textAlign="center">
-              Add Your Recipe
+            <Typography>
+              <h3 className="form-container__title">Add Your Recipe</h3>
             </Typography>
             <InputLabel sx={labelStyles}>Name</InputLabel>
             <TextField name="title" onChange={handleChange} value={inputs.title} margin="normal" variant="outlined" />
