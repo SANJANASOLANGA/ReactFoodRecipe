@@ -2,6 +2,8 @@ import React from 'react';
 import { Card, CardContent, CardHeader, CardMedia, Typography } from '@mui/material';
 
 const UserRecipe = ({ title, description, imageURL }) => {
+  const bulletPoints = description.split('•').filter(point => point.trim() !== '');
+
   return (
     <div>
       <Card
@@ -22,10 +24,15 @@ const UserRecipe = ({ title, description, imageURL }) => {
         />
         <CardMedia style={{ height: "250px", paddingTop: "2%" }}component="img" image={imageURL} alt="Recipe" title={title} />
         <CardContent>
-          <hr />
-          <br />
           <Typography variant="body2" color="text.secondary">
-            {description}
+            {bulletPoints.map((point, index) => (
+              <div key={index}>
+                <Typography variant="body2" color="text.secondary">
+                  • {point.trim()}
+                </Typography>
+                <br />
+              </div>
+            ))}
           </Typography>
         </CardContent>
       </Card>
