@@ -250,13 +250,14 @@
 .about-page-text {
   background-color: rgba(255, 255, 255, 0.8);
   padding: 2rem;
-  max-width: 800px;
+  max-width: 750px;
   text-align: justify;
 }
 
 .about-page-text h1 {
   font-size: 3rem;
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 .about-page-text p {
