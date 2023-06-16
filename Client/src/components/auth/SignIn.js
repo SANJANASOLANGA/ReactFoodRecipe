@@ -49,7 +49,7 @@ export default class Login extends Component {
     return (
       <div className='auth'>
         <form className="form-container" onSubmit={this.handleSubmit}>
-          <h6 className="form-container__subtitle">Are you a admin? Please Sign In first to Add Recipe</h6>
+          <h6 className="form-container__subtitle">Are you a admin? Please Sign In first to Add Recipe</h6> <br /><br />
           <h3 className="form-container__title">Sign In</h3>
 
           <div>
@@ -73,12 +73,13 @@ export default class Login extends Component {
           </div>
 
           <div>
+            <br />
             <button type="submit" className="form-container__submit-button">
               Submit
             </button>
           </div>
           <p>
-            Don't have an account? <a href="/sign-up" className="form-container__signup-link"><span>Sign Up</span></a>
+            Don't have an account? <a href="/sign-up" className="form-container__signup-link"><span style={{ color: 'white' }}>Sign Up</span></a>
           </p>
         </form>
       </div>
