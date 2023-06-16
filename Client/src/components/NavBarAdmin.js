@@ -2,9 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { AiOutlineHome, AiOutlineUser } from "react-icons/ai";
 import { CgFileAdd } from "react-icons/cg";
-import { ImPhone } from "react-icons/im";
+import { TbToolsKitchen2 } from "react-icons/tb";
 import { FiLogOut } from "react-icons/fi";
-import { LuEdit } from "react-icons/lu";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
@@ -48,7 +47,7 @@ function NavBarAdmin() {
               {" "}Home
             </Nav.Link>
             <Nav.Link as={Link} to="/edit-recipes" onClick={handleLinkClick}>
-              <AiOutlineUser/>
+              <TbToolsKitchen2/>
               {" "}Recipes
             </Nav.Link>
             <Nav.Link
