@@ -98,6 +98,7 @@ export default function SignUp() {
                     </div>
 
                     <div>
+                        <br />
                         <button type="submit" className="form-container__submit-button">
                             Sign Up
                         </button>
