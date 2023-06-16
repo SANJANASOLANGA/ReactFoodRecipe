@@ -49,38 +49,12 @@ export default function SignUp() {
 
     return (
         <div>
-            <div>
-                <form onSubmit={handleSubmit}>
-                    <h3>Sign Up</h3>
-                    {/* <div>
-                        Register As
-                        <input
-                            type="radio"
-                            name="UserType"
-                            value="User"
-                            onChange={(e) => setUserType(e.target.value)}
-                        />
-                        User
-                        <input
-                            type="radio"
-                            name="UserType"
-                            value="Admin"
-                            onChange={(e) => setUserType(e.target.value)}
-                        />
-                        Admin
-                    </div>
-                    {userType === "Admin" ? (
-                        <div>
-                            <label>Secret Key</label>
-                            <input
-                                type="text"
-                                placeholder="Secret Key"
-                                onChange={(e) => setSecretKey(e.target.value)}
-                            />
-                        </div>
-                    ) : null} */}
+            <div className='auth'>
+                <form className="form-container" onSubmit={handleSubmit}>
+                    <h6 className="form-container__subtitle">Are you a admin? Please Sign Up first to Add Recipe</h6> <br /><br />
+                    <h3 className="form-container__title">Sign Up</h3>
                     <div>
-                        <label>Secret Key</label>
+                        <label className="form-container__label">Secret Key</label>
                         <input
                             type="text"
                             placeholder="Secret Key"
@@ -88,7 +62,7 @@ export default function SignUp() {
                         />
                     </div>
                     <div>
-                        <label>First name</label>
+                        <label className="form-container__label">First name</label>
                         <input
                             type="text"
                             placeholder="First name"
@@ -97,7 +71,7 @@ export default function SignUp() {
                     </div>
 
                     <div>
-                        <label>Last name</label>
+                        <label className="form-container__label">Last name</label>
                         <input
                             type="text"
                             placeholder="Last name"
@@ -106,7 +80,7 @@ export default function SignUp() {
                     </div>
 
                     <div>
-                        <label>Email address</label>
+                        <label className="form-container__label">Email address</label>
                         <input
                             type="email"
                             placeholder="Enter email"
@@ -115,7 +89,7 @@ export default function SignUp() {
                     </div>
 
                     <div>
-                        <label>Password</label>
+                        <label className="form-container__label">Password</label>
                         <input
                             type="password"
                             placeholder="Enter password"
@@ -124,12 +98,12 @@ export default function SignUp() {
                     </div>
 
                     <div>
-                        <button type="submit">
+                        <button type="submit" className="form-container__submit-button">
                             Sign Up
                         </button>
                     </div>
                     <p>
-                        Already have an account? <a href="/sign-in"><span style={{ color: "black" }}>Sign In</span></a>
+                        Already have an account? <a href="/sign-in"><span style={{ color: "white" }}>Sign In</span></a>
                     </p>
                 </form>
             </div>
