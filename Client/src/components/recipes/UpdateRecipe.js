@@ -51,7 +51,7 @@ const RecipeDetail = () => {
   return (
     <div className='auth'>
       {inputs &&
-        <form className="form-container" onSubmit={handleSubmit}>
+        <form className="form-container" onSubmit={handleSubmit} style={{width:'160%'}}>
           <Box
             border={3}
             borderRadius={10}
@@ -60,13 +60,13 @@ const RecipeDetail = () => {
             marginTop={3}
             display="flex"
             flexDirection="column"
-            width="80%"
+            width="85%"
           >
             <Typography><h3 className="form-container__title">Update Your Recipe</h3></Typography>
             <InputLabel sx={labelStyles}>Recipe Name</InputLabel>
             <TextField style={{color:"white"}} name="title" onChange={handleChange} value={inputs.title} margin={'normal'} variant="outlined" InputProps={{ style: { color: 'white' } }} />
-            <InputLabel sx={labelStyles}>Steps</InputLabel>
-            <TextField name="description" onChange={handleChange} value={inputs.description} margin={'normal'} variant="outlined" InputProps={{ style: { color: 'white' } }} />
+            <InputLabel sx={labelStyles} >Steps</InputLabel>
+            <TextField multiline  rows={4}  rowsMax={10} name="description" onChange={handleChange} value={inputs.description} margin={'normal'} variant="outlined" InputProps={{ style: { color: 'white' } }} />
             <div style={{ display: "flex", position: 'relative', justifyContent: 'center', alignItems: 'center' }}>
               <Button className='form-container__submit-button' style={{ width: '30%', height: '27px' }} variant="contained" type="submit">
                 Submit
