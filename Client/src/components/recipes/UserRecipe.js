@@ -17,13 +17,8 @@ const UserRecipe = ({ title, description, imageURL, userName }) => {
         }}
       >
         <CardHeader
-          avatar={
-            <Avatar sx={{ bgcolor: 'red' }} aria-label="recipe">
-              {userName.charAt(0)}
-            </Avatar>
-          }
           title={title}
-          subheader="Date"
+          // subheader="Date"
         />
         <CardMedia component="img" height="194" image={imageURL} alt="Recipe" />
         <CardContent>
