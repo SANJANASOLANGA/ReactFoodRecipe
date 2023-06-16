@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { AiOutlineHome, AiOutlineUser } from "react-icons/ai";
 import { CgFileAdd } from "react-icons/cg";
 import { TbToolsKitchen2 } from "react-icons/tb";
+import { LuEdit } from "react-icons/lu";
 import { FiLogOut } from "react-icons/fi";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
@@ -46,7 +47,7 @@ function NavBarAdmin() {
               <AiOutlineHome/>
               {" "}Home
             </Nav.Link>
-            <Nav.Link as={Link} to="/edit-recipes" onClick={handleLinkClick}>
+            <Nav.Link as={Link} to="/recipes-admin" onClick={handleLinkClick}>
               <TbToolsKitchen2/>
               {" "}Recipes
             </Nav.Link>
@@ -57,6 +58,10 @@ function NavBarAdmin() {
             >
               <CgFileAdd/>
               {" "}Add Recipes
+            </Nav.Link>
+            <Nav.Link as={Link} to="/edit-recipes" onClick={handleLinkClick}>
+              <LuEdit/>
+              {" "}Edit Recipes
             </Nav.Link>
             <Nav.Link as={Link} to="/admin-contact" onClick={handleLinkClick}>
               <FiLogOut/> {" "}Log Out
