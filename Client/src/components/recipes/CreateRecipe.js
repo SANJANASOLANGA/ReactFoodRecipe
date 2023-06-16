@@ -52,7 +52,7 @@ const CreateRecipe = () => {
         </Helmet>
       </Container>
       <div className='auth'>
-        <form className="form-container" style={{width: '250%'}} onSubmit={handleSubmit}>
+        <form className="form-container" style={{ width: '250%' }} onSubmit={handleSubmit}>
           <Box
             border={3}
             borderRadius={10}
@@ -72,9 +72,11 @@ const CreateRecipe = () => {
             <TextField name="description" onChange={handleChange} value={inputs.description} margin="normal" variant="outlined" />
             <InputLabel sx={labelStyles}>Image</InputLabel>
             <TextField name="imageURL" onChange={handleChange} value={inputs.imageURL} margin="normal" variant="outlined" />
-            <Button sx={{ mt: 2, borderRadius: 4 }} variant="contained" color="warning" type="submit">
-              Submit
-            </Button>
+            <div style={{ display: "flex", position: 'relative', justifyContent: 'center', alignItems: 'center' }}>
+              <Button className='form-container__submit-button' style={{ width: '30%', height: '27px' }} variant="contained" type="submit">
+                Submit
+              </Button>
+            </div>
           </Box>
         </form>
       </div>
