@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Box, Button, InputLabel, TextField, Typography } from '@mui/material';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import NavBarAdmin from '../NavBarAdmin';
 
 const labelStyles = { mb: 1, mt: 2, fontSize: '24px', fontWeight: 'bold' };
 
@@ -40,6 +41,7 @@ const CreateRecipe = () => {
 
   return (
     <div>
+      <NavBarAdmin/>
       <form onSubmit={handleSubmit}>
         <Box
           border={3}
