@@ -47,7 +47,7 @@ export default class Login extends Component {
 
   render() {
     return (
-      <div>
+      <div className='auth'>
         <form className="form-container" onSubmit={this.handleSubmit}>
           <h6 className="form-container__subtitle">Are you a admin? Please Sign In first to Add Recipe</h6>
           <h3 className="form-container__title">Sign In</h3>
