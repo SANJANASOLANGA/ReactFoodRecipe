@@ -481,6 +481,10 @@ a {
   max-width: 400px;
   margin: 0 auto;
   text-align: center;
+  background-color: #402a14;
+  opacity: 0.9;
+  padding: 2%;
+  color: white;
 }
 
 .form-container h6 {
@@ -510,7 +514,7 @@ a {
 }
 
 .form-container button[type="submit"] {
-  background-color: #4CAF50;
+  background-color: red;
   color: white;
   padding: 12px 20px;
   border: none;
