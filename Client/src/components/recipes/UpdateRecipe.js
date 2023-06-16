@@ -64,9 +64,9 @@ const RecipeDetail = () => {
           >
             <Typography><h3 className="form-container__title">Update Your Recipe</h3></Typography>
             <InputLabel sx={labelStyles}>Recipe Name</InputLabel>
-            <TextField style={{color:"white"}} name="title" onChange={handleChange} value={inputs.title} margin={'normal'} variant="outlined" />
+            <TextField style={{color:"white"}} name="title" onChange={handleChange} value={inputs.title} margin={'normal'} variant="outlined" InputProps={{ style: { color: 'white' } }} />
             <InputLabel sx={labelStyles}>Steps</InputLabel>
-            <TextField name="description" onChange={handleChange} value={inputs.description} margin={'normal'} variant="outlined" />
+            <TextField name="description" onChange={handleChange} value={inputs.description} margin={'normal'} variant="outlined" InputProps={{ style: { color: 'white' } }} />
             <div style={{ display: "flex", position: 'relative', justifyContent: 'center', alignItems: 'center' }}>
               <Button className='form-container__submit-button' style={{ width: '30%', height: '27px' }} variant="contained" type="submit">
                 Submit
