@@ -1,11 +1,11 @@
 import React from 'react';
-import { Avatar, Box, Card, CardContent, CardHeader, CardMedia, IconButton, Typography } from '@mui/material';
+import { Box, Card, CardContent, CardHeader, CardMedia, IconButton, Typography } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-const AdminRecipe = ({ title, description, imageURL, userName, id }) => {
+const AdminRecipe = ({ title, description, imageURL, id }) => {
   const navigate = useNavigate();
 
   const handleEdit = (e) => {
@@ -49,14 +49,13 @@ const AdminRecipe = ({ title, description, imageURL, userName, id }) => {
 
         <CardHeader
           title={title}
-          // subheader="Date"
         />
         <CardMedia component="img" height="194" image={imageURL} alt="Recipe" />
         <CardContent>
           <hr />
           <br />
           <Typography variant="body2" color="text.secondary">
-            <b>{userName}</b>: {description}
+            {description}
           </Typography>
         </CardContent>
       </Card>
