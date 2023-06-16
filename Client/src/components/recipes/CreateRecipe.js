@@ -66,11 +66,11 @@ const CreateRecipe = () => {
             <Typography>
               <h3 className="form-container__title">Add Your Recipe</h3>
             </Typography>
-            <InputLabel sx={labelStyles}>Name</InputLabel>
+            <InputLabel sx={labelStyles}>Recipe Name</InputLabel>
             <TextField name="title" onChange={handleChange} value={inputs.title} margin="normal" variant="outlined" />
             <InputLabel sx={labelStyles}>Steps</InputLabel>
             <TextField name="description" onChange={handleChange} value={inputs.description} margin="normal" variant="outlined" />
-            <InputLabel sx={labelStyles}>Image</InputLabel>
+            <InputLabel sx={labelStyles}>Image URL</InputLabel>
             <TextField name="imageURL" onChange={handleChange} value={inputs.imageURL} margin="normal" variant="outlined" />
             <div style={{ display: "flex", position: 'relative', justifyContent: 'center', alignItems: 'center' }}>
               <Button className='form-container__submit-button' style={{ width: '30%', height: '27px' }} variant="contained" type="submit">
