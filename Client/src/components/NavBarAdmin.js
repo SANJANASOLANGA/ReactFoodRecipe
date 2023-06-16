@@ -30,6 +30,10 @@ function NavBarAdmin() {
 
   const handleLinkClick = () => setExpand(false);
 
+  const LogOut = () => {
+    alert('Successfully Logged Out!');
+  };
+
   return (
     <Navbar
       expanded={expand}
@@ -63,7 +67,7 @@ function NavBarAdmin() {
               <LuEdit/>
               {" "}Edit Recipes
             </Nav.Link>
-            <Nav.Link as={Link} to="/admin-contact" onClick={handleLinkClick}>
+            <Nav.Link as={Link} to="/userHome" onClick={handleLinkClick && LogOut}>
               <FiLogOut/> {" "}Log Out
             </Nav.Link>
           </div>
