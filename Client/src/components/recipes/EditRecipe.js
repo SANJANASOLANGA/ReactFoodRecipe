@@ -27,7 +27,7 @@ const EditRecipes = () => {
           <title>{meta.title} | Edit Recipes</title>
         </Helmet>
       </Container>
-      <div>
+      <div className='recipe-page'>
         {recipes &&
           recipes.map((recipe, index) => (
             <AdminRecipe
