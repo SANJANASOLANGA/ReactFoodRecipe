@@ -465,3 +465,12 @@ a {
   padding-right: 15px;
   padding-left: 15px;
 }
+
+/* Recipes */
+
+.recipe-page {
+  background-image: url('../src/assets/backgroundImage.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
