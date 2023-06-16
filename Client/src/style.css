@@ -532,3 +532,11 @@ a {
   text-decoration: none;
 }
 
+.auth {
+    background-image: url('../src/assets/backgroundImage.svg');
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
