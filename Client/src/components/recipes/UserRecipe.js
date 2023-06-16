@@ -10,24 +10,25 @@ const UserRecipe = ({ title, description, imageURL }) => {
         sx={{
           width: '40%',
           margin: 'auto',
-          mt: 2,
+          marginBottom: '1%',
           padding: 2,
-          boxShadow: '5px 5px 10px #ccc',
+          boxShadow: '0px 0px 0px #ccc',
           ':hover': {
-            boxShadow: '10px 10px 20px #ccc',
+            boxShadow: '5px 5px 10px #ccc',
           },
+          backgroundColor:'#54360f',          
         }}
       >
         <CardHeader
           title={title}
-          subheader={imageURL}
+          style={{color: 'white'}}
         />
-        <CardMedia style={{ height: "250px", paddingTop: "2%" }}component="img" image={imageURL} alt="Recipe" title={title} />
+        <CardMedia style={{ height: "250px", paddingTop: "2%", color: 'white' }}component="img" image={imageURL} alt="Recipe" title={title} />
         <CardContent>
           <Typography variant="body2" color="text.secondary">
             {bulletPoints.map((point, index) => (
               <div key={index}>
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant="body2" color="text.secondary" style={{color: 'white'}}>
                   • {point.trim()}
                 </Typography>
                 <br />
