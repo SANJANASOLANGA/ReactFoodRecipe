@@ -4,8 +4,8 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col, Alert } from "react-bootstrap";
 import { contactConfig } from "./content_option";
 import { meta } from "./content_option";
-import { AiFillGithub, AiOutlineTwitter, AiFillInstagram } from "react-icons/ai";
-import { FaLinkedinIn } from "react-icons/fa";
+import { AiFillInstagram } from "react-icons/ai";
+import { RiFacebookCircleFill } from "react-icons/ri";
 import Particle from "../Particle";
 import NavBar from "../Navbar";
 
@@ -165,32 +165,12 @@ export const Contact = () => {
             <ul className="home-about-social-links">
               <li className="social-icons">
                 <a
-                  href="https://github.com/SANJANASOLANGA"
+                  href="https://www.facebook.com/sanjana.solangaarachchi.33"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour  home-social-icons"
                 >
-                  <AiFillGithub />
-                </a>
-              </li>
-              <li className="social-icons">
-                <a
-                  href="https://twitter.com/sanjana_solanga"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour  home-social-icons"
-                >
-                  <AiOutlineTwitter />
-                </a>
-              </li>
-              <li className="social-icons">
-                <a
-                  href="https://www.linkedin.com/in/sanjana-solanga-arachchi/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour  home-social-icons"
-                >
-                  <FaLinkedinIn />
+                  <RiFacebookCircleFill />
                 </a>
               </li>
               <li className="social-icons">
