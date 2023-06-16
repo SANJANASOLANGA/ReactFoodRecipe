@@ -20,7 +20,7 @@ const AdminRecipe = ({ title, description, imageURL, id }) => {
 
   const handleDelete = () => {
     alert('Deleted........');
-    deleteRequest().then(() => navigate('/')).then(() => navigate('/recipes-admin'));
+    deleteRequest().then(() => navigate('/')).then(() => navigate('/adminHome'));
   };
 
   return (
