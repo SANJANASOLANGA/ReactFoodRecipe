@@ -48,10 +48,6 @@ function NavBar() {
               <AiOutlineHome/>
               {" "}Home
             </Nav.Link>
-            <Nav.Link as={Link} to="/about" onClick={handleLinkClick}>
-              <AiOutlineUser/>
-              {" "}About
-            </Nav.Link>
             <Nav.Link as={Link} to="/recipes" onClick={handleLinkClick}>
               <TbToolsKitchen2/>
               {" "}Recipes
@@ -64,11 +60,15 @@ function NavBar() {
               <FiDownload/>
               {" "}Download
             </Nav.Link>
-            <Nav.Link as={Link} to="/contact" onClick={handleLinkClick}>
-              <ImPhone/> {" "}Contact
-            </Nav.Link>
             <Nav.Link as={Link} to="/sign-in" onClick={handleLinkClick}>
               <CgFileAdd/> {" "}Add Recipe
+            </Nav.Link>
+            <Nav.Link as={Link} to="/about" onClick={handleLinkClick}>
+              <AiOutlineUser/>
+              {" "}About Us
+            </Nav.Link>
+            <Nav.Link as={Link} to="/contact" onClick={handleLinkClick}>
+              <ImPhone/> {" "}Contact
             </Nav.Link>
           </div>
         </Navbar.Collapse>
