@@ -579,3 +579,7 @@ a {
   border-radius: 4px;
   cursor: pointer;
 }
+
+.download-button:hover {
+  background-color: #e8742c;
+}
