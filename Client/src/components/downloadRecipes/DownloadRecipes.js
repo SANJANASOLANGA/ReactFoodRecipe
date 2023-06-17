@@ -24,6 +24,10 @@ export default function DownloadRecipes() {
     // 'image9.jpg',
   ];
 
+  const downloadRecipe = () => {
+    console.log('Recipe downloaded!');
+  };
+
   return (
     <HelmetProvider>
       <NavBar />
@@ -37,7 +41,7 @@ export default function DownloadRecipes() {
         {images.map((image, index) => (
           <div key={index} className="image-container">
             <img src={image} alt={`Image ${index + 1}`} className="image" />
-            <button className="download-button">Download Recipe</button>
+            <button className="download-button" onClick={downloadRecipe}>Download Recipe</button>
           </div>
         ))}
       </div>
