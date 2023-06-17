@@ -15,7 +15,7 @@ export default function AdminHome() {
       <Container>
         <Helmet>
           <meta charSet="utf-8" />
-          <title>{meta.title} | Home</title>
+          <title>{meta.title} | Admin Home</title>
         </Helmet>
         <Container>
           <div class="container-user">
