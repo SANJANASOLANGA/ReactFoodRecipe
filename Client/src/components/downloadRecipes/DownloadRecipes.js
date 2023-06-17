@@ -3,6 +3,7 @@ import NavBar from "../Navbar";
 import { meta } from "../contact/content_option";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container } from "react-bootstrap";
+import { AiOutlineDownload } from "react-icons/ai";
 import img from '../../assets/logo.png'
 
 export default function DownloadRecipes() {
@@ -41,7 +42,7 @@ export default function DownloadRecipes() {
         {images.map((image, index) => (
           <div key={index} className="image-container">
             <img src={image} alt={`Image ${index + 1}`} className="image" />
-            <button className="download-button" onClick={downloadRecipe}>Download Recipe</button>
+            <button className="download-button" onClick={downloadRecipe}><AiOutlineDownload />{' '}Download Recipe</button>
           </div>
         ))}
       </div>
