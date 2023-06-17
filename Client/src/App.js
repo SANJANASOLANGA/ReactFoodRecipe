@@ -10,8 +10,6 @@ import About from './components/about/About';
 import UserHome from './components/home/UserHome';
 import AdminHome from './components/home/AdminHome';
 import AdminAddRecipes from './components/recipes/AdminAddRecipes';
-import AdminAbout from './components/about/AdminAbout';
-import AdminContact from './components/contact/AdminContact'
 import CreateReceipe from './components/recipes/CreateRecipe';
 import EditRecipe from './components/recipes/EditRecipe'
 import UpdateRecipe from './components/recipes/UpdateRecipe';
@@ -34,8 +32,6 @@ const App = () => {
               <Route path='/userhome' element={<UserHome />} />
               <Route path='/adminhome' element={<AdminHome />} />
               <Route path='/add-recipes' element={<AdminAddRecipes />} />
-              <Route path='/admin-about' element={<AdminAbout />} />
-              <Route path='/admin-contact' element={<AdminContact />} />
               <Route path='/create-receipe' element={<CreateReceipe />} />
               <Route path='/edit-recipes' element={<EditRecipe />} />
               <Route path="/update-recipes/:id" element={<UpdateRecipe />}/>
