@@ -545,3 +545,27 @@ a {
     justify-content: center;
     align-items: center;
 }
+
+/* Dowload Recipes */
+
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.image-container {
+  flex-basis: 30%;
+  margin-bottom: 20px;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.download-button {
+  display: block;
+  margin-top: 10px;
+}
