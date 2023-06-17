@@ -572,4 +572,10 @@ a {
   left: 50%;
   transform: translateX(-50%);
   bottom: 10px;
+  background-color: #a68d6c;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
