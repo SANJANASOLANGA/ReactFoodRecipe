@@ -7,7 +7,7 @@ const labelStyles = { color: 'white', mb: 1, mt: 2, fontSize: '20px' };
 
 const RecipeDetail = () => {
   const navigate = useNavigate();
-  const [blog, setBlog] = useState();
+  const [recipe, setRecipe] = useState();
   const id = useParams().id;
   console.log(id);
   const [inputs, setInputs] = useState(
@@ -33,8 +33,8 @@ const RecipeDetail = () => {
 
   useEffect(() => {
     fetchDetails().then(data => {
-      setBlog(data.blog)
-      setInputs({ title: data.blog.title, description: data.blog.description })
+      setRecipe(data.recipe)
+      setInputs({ title: data.recipe.title, description: data.recipe.description })
     })
   }, [id]);
   const sendRequest = async () => {
@@ -46,10 +46,10 @@ const RecipeDetail = () => {
     const data = await res.data;
     return data;
   }
-  console.log(blog);
+  console.log(recipe);
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(inputs);
+    console.log('Details is ',inputs,'Title is ', inputs.title);
     sendRequest().then((data) => console.log(data)).then(() => navigate("/edit-recipes"));
   }
   return (
