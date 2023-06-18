@@ -37,8 +37,7 @@ const AdminRecipe = ({ title, description, imageURL, id }) => {
           ':hover': {
             boxShadow: '5px 5px 10px #ccc',
           },
-          backgroundColor:'#402a14',
-          opacity:0.9   
+          backgroundColor: 'rgba(64, 42, 20, 0.9)'  
         }}
       >
 
