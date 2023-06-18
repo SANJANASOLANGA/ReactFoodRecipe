@@ -5,9 +5,11 @@ import NavBar from "../Navbar";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { meta } from "../contact/content_option";
 import { Container } from "react-bootstrap";
+import Spinner from '../spinner/spinner'
 
 const Recipes = () => {
   const [recipes, setRecipes] = useState([]);
+  const [loading, setLoading] = useState(true);
   const sendRequest = async () => {
     const res = await axios.get('http://localhost:5000/api/recipe').catch((err) => console.log(err));
     const data = await res.data;
@@ -16,6 +18,9 @@ const Recipes = () => {
 
   useEffect(() => {
     sendRequest().then((data) => setRecipes(data.recipes));
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
   }, []);
 
   return (
@@ -27,7 +32,11 @@ const Recipes = () => {
           <title>{meta.title} | Recipes</title>
         </Helmet>
       </Container>
-
+      {loading ? (
+        <Spinner />
+      ) : (
+        <div>
+          
       <div className='recipe-page'>
         {recipes &&
           recipes.map((recipe, index) => (
@@ -42,6 +51,8 @@ const Recipes = () => {
             />
           ))}
       </div>
+        </div>
+      )}
     </HelmetProvider>
   );
 };
