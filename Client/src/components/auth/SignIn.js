@@ -18,37 +18,42 @@ export default class SignIn extends Component {
   handleSubmit(e) {
     e.preventDefault();
     const { email, password } = this.state;
-    console.log(email, password);
-    fetch('http://localhost:5000/login-user', {
-      method: 'POST',
-      crossDomain: true,
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-        'Access-Control-Allow-Origin': '*',
-      },
-      body: JSON.stringify({
-        email,
-        password,
-      }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data, 'userRegister');
-        if (data.status === 'ok') {
-          alert('Login Successful');
-          window.localStorage.setItem('token', data.data);
-          window.localStorage.setItem('loggedIn', true);
+    console.log('Emailssssss ', email, password);
+    if (email == ! ' ' || password == ! ' ') {
+      alert('All fields are required!')
+    } else {
+      fetch('http://localhost:5000/login-user', {
+        method: 'POST',
+        crossDomain: true,
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+          'Access-Control-Allow-Origin': '*',
+        },
+        body: JSON.stringify({
+          email,
+          password,
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data, 'userRegister');
+          if (data.status === 'ok') {
+            alert('Login Successful');
+            window.localStorage.setItem('token', data.data);
+            window.localStorage.setItem('loggedIn', true);
 
-          this.setState({ navigateToAdminHome: true });
-        } else if (data.error === 'User Not found') {
-          alert('User Not Found! Enter a valid email');
-        } else if (data.error === 'InvAlid Password') {
-          alert('Password incorrect! Enter a valid password');
-        } else {
-          alert('Something went wrong');
-        }
-      });
+            this.setState({ navigateToAdminHome: true });
+          } else if (data.error === 'User Not found') {
+            alert('User Not Found! Enter a valid email');
+          } else if (data.error === 'InvAlid Password') {
+            alert('Password incorrect! Enter a valid password');
+          } else {
+            alert('Something went wrong');
+          }
+        });
+
+    }
   }
 
   render() {
