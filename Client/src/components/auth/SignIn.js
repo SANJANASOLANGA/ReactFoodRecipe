@@ -39,7 +39,7 @@ export default class SignIn extends Component {
         .then((data) => {
           console.log(data, 'userRegister');
           if (data.status === 'ok') {
-            alert('Login Successful');
+            alert('Login Successful!');
             window.localStorage.setItem('token', data.data);
             window.localStorage.setItem('loggedIn', true);
 
