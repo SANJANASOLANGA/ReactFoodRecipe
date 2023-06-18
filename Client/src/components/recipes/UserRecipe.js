@@ -23,7 +23,7 @@ const UserRecipe = ({ title, description, imageURL }) => {
           title={title}
           style={{color: 'white'}}
         />
-        <CardMedia style={{ width: "100%", height: "100%", paddingTop: "2%", color: 'white', opacity:1 }}component="img" image={imageURL} alt="Recipe" title={title} />
+        <CardMedia style={{ width: "100%", height: "100%", paddingTop: "2%", color: 'white', opacity:1 }}component="img" image={imageURL} alt={title} title={title} />
         <CardContent>
           <Typography variant="body2" color="text.secondary">
             {bulletPoints.map((point, index) => (
