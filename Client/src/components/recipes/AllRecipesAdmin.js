@@ -6,9 +6,11 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import { meta } from "../contact/content_option";
 import { Container } from "react-bootstrap";
 import { Navigate } from 'react-router-dom';
+import Spinner from '../spinner/spinner'
 
 const Recipes = () => {
   const [recipes, setRecipes] = useState([]);
+  const [loading, setLoading] = useState(true);
   const sendRequest = async () => {
     const res = await axios.get('http://localhost:5000/api/recipe').catch((err) => console.log(err));
     const data = await res.data;
@@ -18,6 +20,9 @@ const Recipes = () => {
 
   useEffect(() => {
     sendRequest().then((data) => setRecipes(data.recipes));
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
   }, []);
 
   if (!isLoggedIn) {
