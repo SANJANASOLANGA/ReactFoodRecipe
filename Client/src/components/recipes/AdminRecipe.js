@@ -21,7 +21,7 @@ const AdminRecipe = ({ title, description, imageURL, id }) => {
   };
 
   const handleDelete = () => {
-    alert('Deleted........');
+    alert('Deleted Successfully!');
     deleteRequest().then(() => navigate('/')).then(() => navigate('/adminHome'));
   };
 
