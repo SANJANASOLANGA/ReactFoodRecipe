@@ -1,26 +1,28 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Navigate } from 'react-router-dom';
 
 export default class SignIn extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      email: "",
-      password: ""
+      email: '',
+      password: '',
+      navigateToAdminHome: false,
     };
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(e) {
-    e.preventDefault()
+    e.preventDefault();
     const { email, password } = this.state;
-    console.log(email, password)
-    fetch("http://localhost:5000/login-user", {
-      method: "POST",
+    console.log(email, password);
+    fetch('http://localhost:5000/login-user', {
+      method: 'POST',
       crossDomain: true,
       headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        "Access-Control-Allow-Origin": "*",
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        'Access-Control-Allow-Origin': '*',
       },
       body: JSON.stringify({
         email,
@@ -29,27 +31,34 @@ export default class SignIn extends Component {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data, "userRegister");
-        if (data.status === "ok") {
-          alert("Login Successful");
-          window.localStorage.setItem("token", data.data);
-          window.localStorage.setItem("loggedIn", true);
+        console.log(data, 'userRegister');
+        if (data.status === 'ok') {
+          alert('Login Successful');
+          window.localStorage.setItem('token', data.data);
+          window.localStorage.setItem('loggedIn', true);
 
-          window.location.href = "./adminHome"
-        } else if (data.error === "User Not found") {
-          alert("User Not Found! Enter a valid email");
+          this.setState({ navigateToAdminHome: true });
+        } else if (data.error === 'User Not found') {
+          alert('User Not Found! Enter a valid email');
         } else {
-          alert("Something went wrong");
+          alert('Something went wrong');
         }
       });
-
   }
 
   render() {
+    if (this.state.navigateToAdminHome) {
+      return <Navigate to="/adminhome" replace />;
+    }
+
     return (
-      <div className='auth'>
+      <div className="auth">
         <form className="form-container" onSubmit={this.handleSubmit}>
-          <h6 className="form-container__subtitle">Are you a admin? Please Sign In first to Add Recipe</h6> <br /><br />
+          <h6 className="form-container__subtitle">
+            Are you a admin? Please Sign In first to Add Recipe
+          </h6>{' '}
+          <br />
+          <br />
           <h3 className="form-container__title">Sign In</h3>
 
           <div>
@@ -79,10 +88,13 @@ export default class SignIn extends Component {
             </button>
           </div>
           <p>
-            Don't have an account? <a href="/sign-up" className="form-container__signup-link"><span style={{ color: 'white' }}>Sign Up</span></a>
+            Don't have an account?{' '}
+            <a href="/sign-up" className="form-container__signup-link">
+              <span style={{ color: 'white' }}>Sign Up</span>
+            </a>
           </p>
         </form>
       </div>
-    )
+    );
   }
 }
