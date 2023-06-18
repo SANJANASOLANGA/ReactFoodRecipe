@@ -43,6 +43,8 @@ export default class SignIn extends Component {
           this.setState({ navigateToAdminHome: true });
         } else if (data.error === 'User Not found') {
           alert('User Not Found! Enter a valid email');
+        } else if (data.error === 'InvAlid Password') {
+          alert('Password incorrect! Enter a valid password');
         } else {
           alert('Something went wrong');
         }
