@@ -55,7 +55,7 @@ const AdminRecipe = ({ title, description, imageURL, id }) => {
           title={title}
           style={{color: 'white'}}
         />
-        <CardMedia style={{ height: "250px", paddingTop: "2%", color: 'white', opacity:1 }}component="img" image={imageURL} alt="Recipe" title={title} />
+        <CardMedia style={{ width: "100%", height: "100%", paddingTop: "2%", color: 'white', opacity:1, objectFit: 'cover' }}component="img" image={imageURL} alt="Recipe" title={title} />
         <CardContent>
           <Typography variant="body2" color="text.secondary">
             {bulletPoints.map((point, index) => (
