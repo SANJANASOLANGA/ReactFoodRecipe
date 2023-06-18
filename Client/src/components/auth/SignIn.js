@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class Login extends Component {
+export default class SignIn extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -35,7 +35,7 @@ export default class Login extends Component {
           window.localStorage.setItem("token", data.data);
           window.localStorage.setItem("loggedIn", true);
 
-          window.location.href = "./userDetails"
+          window.location.href = "./adminHome"
         } else if (data.error === "User Not found") {
           alert("User Not Found! Enter a valid email");
         } else {
