@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
 export default function SignUp() {
+    const navigate = useNavigate();
     const [fname, setFname] = useState("");
     const [lname, setLname] = useState("");
     const [email, setEmail] = useState("");
@@ -37,7 +39,10 @@ export default function SignUp() {
                     console.log(data, "userRegister");
                     if (data.status === "ok") {
                         alert("Registration Successful");
-                        window.location.href = "./AdminHome"
+                        window.localStorage.setItem('token', data.data);
+                        window.localStorage.setItem('loggedIn', true);
+
+                        navigate('/adminhome', { replace: true });
                     } else if (data.error === "User Exists") {
                         alert("User Exists!");
                     } else {
