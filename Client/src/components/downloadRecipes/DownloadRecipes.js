@@ -68,7 +68,7 @@ export default function DownloadRecipes() {
         {images.map((image, index) => (
           <div key={index} className="image-container">
             <div><h2 style={{textAlign: "center"}}>{image.name}</h2></div>
-            <img src={image.recipeImg} alt={`Image ${index + 1}`} title={image.name} className="image" />
+            <img src={image.recipeImg} alt={`Image ${index + 1}`} title={image.name} className="image hover-effect" />
             <button className="download-button" onClick={() => downloadRecipe(image.pdf)}><AiOutlineDownload />{' '}Download Recipe</button>
           </div>
         ))}
