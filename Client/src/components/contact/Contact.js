@@ -41,6 +41,7 @@ export const Contact = () => {
       .then(
         (result) => {
           console.log(result.text);
+          alert("SUCCESS! Thank you for your message")
           setFormdata({
             loading: false,
             alertmessage: "SUCCESS! Thank you for your message",
@@ -50,6 +51,7 @@ export const Contact = () => {
         },
         (error) => {
           console.log(error.text);
+          alert(`Faild to send!,${error.text}`)
           setFormdata({
             alertmessage: `Faild to send!,${error.text}`,
             variant: "danger",
@@ -78,7 +80,7 @@ export const Contact = () => {
         </Helmet>
         <Row className="sec_sp">
           <Col lg="12">
-            <Alert
+            {/* <Alert
               variant={formData.variant}
               className={`rounded-0 co_alert ${
                 formData.show ? "d-block" : "d-none"
@@ -87,7 +89,7 @@ export const Contact = () => {
               dismissible
             >
               <p className="my-0">{formData.alertmessage}</p>
-            </Alert>
+            </Alert> */}
           </Col>
           <Col lg="5" className="contact_details">
             <h3 style={{ fontSize: "2.1em", paddingBottom: "20px"}}>Get In <strong className="purple">Touch</strong></h3>
