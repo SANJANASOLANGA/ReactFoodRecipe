@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { Box, Button, InputLabel, TextField, Typography } from '@mui/material';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Navigate } from 'react-router-dom';
 import NavBarAdmin from '../NavBarAdmin';
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { meta } from "../contact/content_option";
 import { Container } from "react-bootstrap";
 
 const labelStyles = { color: 'white', mb: 1, mt: 2, fontSize: '20px' };
+const isLoggedIn = window.localStorage.getItem('loggedIn');
 
 const CreateRecipe = () => {
   const navigate = useNavigate();
@@ -41,6 +42,9 @@ const CreateRecipe = () => {
     console.log(inputs);
     sendRequest().then((data) => console.log(data)).then(() => navigate('/edit-recipes'));
   };
+  if (!isLoggedIn) {
+    return <Navigate to="/sign-in" replace />;
+  }
 
   return (
     <HelmetProvider>
