@@ -31,18 +31,18 @@ import BeefStew from '../../assets/RecipePDF/BeefStew.pdf';
 
 export default function DownloadRecipes() {
   const images = [
-    { img: LavaCakeImg, pdf: LavaCake },
-    { img: ChipCookisImg, pdf: ChipCookis },
-    { img: MacCheeseImg, pdf: MacCheese },
-    { img: TacosImg, pdf: Tacos },
-    { img: SpaghetiImg, pdf: Spagheti },
-    { img: FiredChickenImg, pdf: FiredChicken },
-    { img: PizzaImg, pdf: Pizza },
-    { img: LasangnaImg, pdf: Lasangna },
-    { img: StirFryImg, pdf: StirFry },
-    { img: ShrimpImg, pdf: Shrimp },
-    { img: RoastedVegImg, pdf: RoastedVeg },
-    { img: BeefStewImg, pdf: BeefStew },
+    { img: LavaCakeImg, pdf: LavaCake, name: "Lava Cake" },
+    { img: ChipCookisImg, pdf: ChipCookis, name: "Chip Cookies" },
+    { img: MacCheeseImg, pdf: MacCheese, name: "Mac and Cheese" },
+    { img: TacosImg, pdf: Tacos, name: "Tacos" },
+    { img: SpaghetiImg, pdf: Spagheti, name: "Spaghetti" },
+    { img: FiredChickenImg, pdf: FiredChicken, name: "Fried Chicken" },
+    { img: PizzaImg, pdf: Pizza, name: "Pizza" },
+    { img: LasangnaImg, pdf: Lasangna, name: "Lasagna" },
+    { img: StirFryImg, pdf: StirFry, name: "Stir Fry" },
+    { img: ShrimpImg, pdf: Shrimp, name: "Shrimp" },
+    { img: RoastedVegImg, pdf: RoastedVeg, name: "Roasted Vegetables" },
+    { img: BeefStewImg, pdf: BeefStew, name: "Beef Stew" },
   ];
 
   const downloadRecipe = (pdf) => {
@@ -67,6 +67,7 @@ export default function DownloadRecipes() {
       <div className="image-grid">
         {images.map((image, index) => (
           <div key={index} className="image-container">
+            <div><h2 style={{textAlign: "center"}}>{image.name}</h2></div>
             <img src={image.img} alt={`Image ${index + 1}`} className="image" />
             <button className="download-button" onClick={() => downloadRecipe(image.pdf)}><AiOutlineDownload />{' '}Download Recipe</button>
           </div>
