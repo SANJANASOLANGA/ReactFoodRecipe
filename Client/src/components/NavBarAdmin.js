@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { AiOutlineHome, AiOutlineUser } from "react-icons/ai";
+import { Link, useNavigate } from "react-router-dom";
+import { AiOutlineHome } from "react-icons/ai";
 import { CgFileAdd } from "react-icons/cg";
 import { TbToolsKitchen2 } from "react-icons/tb";
 import { LuEdit } from "react-icons/lu";
@@ -14,6 +14,8 @@ import "../style.css";
 function NavBarAdmin() {
   const [expand, setExpand] = useState(false);
   const [navColour, setNavColour] = useState(false);
+
+  const navigate = useNavigate();
 
   const handleScroll = () => {
     if (window.scrollY >= 20) {
@@ -32,6 +34,9 @@ function NavBarAdmin() {
 
   const LogOut = () => {
     alert('Successfully Logged Out!');
+    window.localStorage.removeItem('loggedIn');
+    window.localStorage.removeItem('token');
+    navigate('/userHome', { replace: true });
   };
 
   return (
