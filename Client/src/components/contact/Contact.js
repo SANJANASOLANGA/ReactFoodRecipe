@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import * as emailjs from "emailjs-com";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import { Container, Row, Col, Alert } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import { contactConfig } from "./content_option";
 import { meta } from "./content_option";
 import { AiFillInstagram } from "react-icons/ai";
@@ -57,7 +57,6 @@ export const Contact = () => {
             variant: "danger",
             show: true,
           });
-          document.getElementsByClassName("co_alert")[0].scrollIntoView();
         }
       );
   };
@@ -80,16 +79,6 @@ export const Contact = () => {
         </Helmet>
         <Row className="sec_sp">
           <Col lg="12">
-            {/* <Alert
-              variant={formData.variant}
-              className={`rounded-0 co_alert ${
-                formData.show ? "d-block" : "d-none"
-              }`}
-              onClose={() => setFormdata({ show: false })}
-              dismissible
-            >
-              <p className="my-0">{formData.alertmessage}</p>
-            </Alert> */}
           </Col>
           <Col lg="5" className="contact_details">
             <h3 style={{ fontSize: "2.1em", paddingBottom: "20px"}}>Get In <strong className="purple">Touch</strong></h3>
