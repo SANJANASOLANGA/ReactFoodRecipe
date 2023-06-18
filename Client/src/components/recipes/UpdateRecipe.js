@@ -37,14 +37,22 @@ const RecipeDetail = () => {
       setInputs({ title: data.recipe.title, description: data.recipe.description })
     })
   }, [id]);
-  const sendRequest = async () => {
-    const res = await axios.put(`http://localhost:5000/api/recipe/update/${id}`, {
-      title: inputs.title,
-      description: inputs.description
 
-    }).catch(err => console.log(err))
-    const data = await res.data;
-    return data;
+  const sendRequest = async () => {
+    try{
+      const res = await axios.put(`http://localhost:5000/api/recipe/update/${id}`, {
+        title: inputs.title,
+        description: inputs.description
+  
+      }).catch(err => console.log(err))
+      const data = await res.data;
+      alert('Recipe updated successfully!');
+      return data;
+    }catch (error){
+      console.log('error is ',error);
+      alert('Try again! Unable to update recipe');
+    }
+    
   }
   console.log(recipe);
   const handleSubmit = (e) => {
