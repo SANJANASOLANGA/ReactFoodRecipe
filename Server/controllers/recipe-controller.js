@@ -74,17 +74,17 @@ exports.updateRecipe = async (req, res, next) => {
 
 exports.getById = async (req, res, next) => {
   const id = req.params.id;
-  let blog;
+  let recipe;
   try {
-    blog = await RecipeModel.findById(id);
+    recipe = await RecipeModel.findById(id);
   } catch (err) {
     console.log(err);
     return res.status(500).json({ message: err });
   }
-  if (!blog) {
+  if (!recipe) {
     return res.status(404).json({ message: 'No Recipe Found' });
   }
-  return res.status(200).json({ blog });
+  return res.status(200).json({ recipe });
 };
 
 exports.deleteRecipe = async (req, res, next) => {
