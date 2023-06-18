@@ -25,26 +25,39 @@ const CreateRecipe = () => {
     }));
   };
 
-  const sendRequest = async () => {
+const sendRequest = async () => {
+  try {
     const res = await axios.post('http://localhost:5000/api/recipe/add', {
       title: inputs.title,
       description: inputs.description,
       image: inputs.imageURL,
       user: '64883e460d6dd590ea162cb6',
-    }).catch((err) => console.log(err));
-    const data = await res.data;
-    alert('Successfully Recipe added!')
+    });
+    const data = res.data;
+    alert('Recipe added successfully!');
     return data;
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(inputs);
-    sendRequest().then((data) => console.log(data)).then(() => navigate('/edit-recipes'));
-  };
-  if (!isLoggedIn) {
-    return <Navigate to="/sign-in" replace />;
+  } catch (error) {
+    console.log('error is ',error);
+    alert('Try again! Unable to add recipe');
   }
+};
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  console.log(inputs);
+  try {
+    const data = await sendRequest();
+    console.log(data);
+    navigate('/edit-recipes');
+  } catch (error) {
+    alert('Try again!')
+    console.log(error);
+  }
+};
+
+if (!isLoggedIn) {
+  return <Navigate to="/sign-in" replace />;
+}
 
   return (
     <HelmetProvider>
