@@ -5,9 +5,12 @@ import NavBarAdmin from '../NavBarAdmin';
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { meta } from "../contact/content_option";
 import { Container } from "react-bootstrap";
+import { Navigate } from 'react-router-dom';
 
 const EditRecipes = () => {
   const [recipes, setRecipes] = useState([]);
+  const isLoggedIn = window.localStorage.getItem('loggedIn');
+
   const sendRequest = async () => {
     const res = await axios.get('http://localhost:5000/api/recipe').catch((err) => console.log(err));
     const data = await res.data;
@@ -17,6 +20,10 @@ const EditRecipes = () => {
   useEffect(() => {
     sendRequest().then((data) => setRecipes(data.recipes));
   }, []);
+
+  if (!isLoggedIn) {
+    return <Navigate to="/sign-in" replace />;
+  }
 
   return (
     <HelmetProvider>
