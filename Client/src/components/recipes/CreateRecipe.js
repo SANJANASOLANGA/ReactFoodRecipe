@@ -30,7 +30,7 @@ const CreateRecipe = () => {
       title: inputs.title,
       description: inputs.description,
       image: inputs.imageURL,
-      user: localStorage.getItem('userId'),
+      user: '64883e460d6dd590ea162cb6',
     }).catch((err) => console.log(err));
     const data = await res.data;
     alert('Successfully Recipe added!')
