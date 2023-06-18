@@ -17,7 +17,7 @@ const userSchema = new Schema({
     required: true,
     minlength: 6,
   },
-  recipes: [{ type: mongoose.Types.ObjectId, ref: 'Recipe', required: true }],
+  recipes: [{ type: mongoose.Types.ObjectId, ref: 'Blog', required: true }],
 });
 
 module.exports = mongoose.model('User', userSchema);
