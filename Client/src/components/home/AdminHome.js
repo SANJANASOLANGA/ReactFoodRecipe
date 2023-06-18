@@ -6,8 +6,14 @@ import { Container, Row, Col, Alert } from "react-bootstrap";
 import mainAdminHome from "../../assets/mainAdminHome.jpeg";
 import adminAddRecipe from "../../assets/adminAddRecipe.jpeg";
 import editRecipe from "../../assets/editRecipe.jpeg";
+import { Navigate } from 'react-router-dom';
 
 export default function AdminHome() {
+  const isLoggedIn = window.localStorage.getItem('loggedIn');
+
+  if (!isLoggedIn) {
+    return <Navigate to="/sign-in" replace />;
+  }
   
   return (
     <HelmetProvider>
