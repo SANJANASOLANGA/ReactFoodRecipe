@@ -6,9 +6,11 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import { meta } from "../contact/content_option";
 import { Container } from "react-bootstrap";
 import { Navigate } from 'react-router-dom';
+import Spinner from '../spinner/spinner'
 
 const EditRecipes = () => {
   const [recipes, setRecipes] = useState([]);
+  const [loading, setLoading] = useState(true);
   const isLoggedIn = window.localStorage.getItem('loggedIn');
 
   const sendRequest = async () => {
@@ -19,6 +21,9 @@ const EditRecipes = () => {
 
   useEffect(() => {
     sendRequest().then((data) => setRecipes(data.recipes));
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
   }, []);
 
   if (!isLoggedIn) {
