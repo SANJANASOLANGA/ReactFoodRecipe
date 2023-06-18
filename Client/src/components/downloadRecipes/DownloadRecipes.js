@@ -5,21 +5,33 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container } from "react-bootstrap";
 import { AiOutlineDownload } from "react-icons/ai";
 import img from '../../assets/logo.png'
-import pdf1 from '../../assets/Document.pdf';
-import pdf2 from '../../assets/Document1.pdf';
-import pdf3 from '../../assets/Document2.pdf';
+import LavaCake from '../../assets/RecipePDF/LavaCake.pdf';
+import ChipCookis from '../../assets/RecipePDF/ChipCookis.pdf';
+import MacCheese from '../../assets/RecipePDF/MacCheese.pdf';
+import Tacos from '../../assets/RecipePDF/Tacos.pdf';
+import Spagheti from '../../assets/RecipePDF/Spagheti.pdf';
+import FiredChicken from '../../assets/RecipePDF/FiredChicken.pdf';
+import Pizza from '../../assets/RecipePDF/Pizza.pdf';
+import Lasangna from '../../assets/RecipePDF/Lasangna.pdf';
+import StirFry from '../../assets/RecipePDF/StirFry.pdf';
+import Shrimp from '../../assets/RecipePDF/Shrimp.pdf';
+import RoastedVeg from '../../assets/RecipePDF/RoastedVeg.pdf';
+import BeefStew from '../../assets/RecipePDF/BeefStew.pdf';
 
 export default function DownloadRecipes() {
   const images = [
-    { img: img, pdf: pdf1 },
-    { img: img, pdf: pdf2 },
-    { img: img, pdf: pdf3 },
-    { img: img, pdf: pdf1 },
-    { img: img, pdf: pdf2 },
-    { img: img, pdf: pdf3 },
-    { img: img, pdf: pdf1 },
-    { img: img, pdf: pdf2 },
-    { img: img, pdf: pdf3 },
+    { img: img, pdf: LavaCake },
+    { img: img, pdf: ChipCookis },
+    { img: img, pdf: MacCheese },
+    { img: img, pdf: Tacos },
+    { img: img, pdf: Spagheti },
+    { img: img, pdf: FiredChicken },
+    { img: img, pdf: Pizza },
+    { img: img, pdf: Lasangna },
+    { img: img, pdf: StirFry },
+    { img: img, pdf: Shrimp },
+    { img: img, pdf: RoastedVeg },
+    { img: img, pdf: BeefStew },
   ];
 
   const downloadRecipe = (pdf) => {
