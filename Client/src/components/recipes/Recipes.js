@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import UserRecipe from '../recipes/UserRecipe';
 import NavBar from "../Navbar";
+import { Helmet, HelmetProvider } from "react-helmet-async";
+import { meta } from "../contact/content_option";
+import { Container } from "react-bootstrap";
 
 const Recipes = () => {
   const [recipes, setRecipes] = useState([]);
@@ -16,8 +19,15 @@ const Recipes = () => {
   }, []);
 
   return (
-    <div>
+    <HelmetProvider>
       <NavBar />
+      <Container>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>{meta.title} | Recipes</title>
+        </Helmet>
+      </Container>
+
       <div className='recipe-page'>
         {recipes &&
           recipes.map((recipe, index) => (
@@ -32,7 +42,7 @@ const Recipes = () => {
             />
           ))}
       </div>
-    </div>
+    </HelmetProvider>
   );
 };
 
