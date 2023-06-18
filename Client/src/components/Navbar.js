@@ -41,7 +41,7 @@ function NavBar() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <div className="navbar-nav ml-auto">
             <Navbar.Brand href="/userhome" className="d-flex">
-              <img src={logo} className="logo-image" alt="brand" />
+              <img src={logo} className="logo-image" alt="CookeryCorner" title="CookeryCorner" />
             </Navbar.Brand>
 
             <Nav.Link as={Link} to="/userhome" onClick={handleLinkClick}>
