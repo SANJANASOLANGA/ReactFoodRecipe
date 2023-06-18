@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { Helmet, HelmetProvider } from "react-helmet-async";
+import { meta } from "../contact/content_option";
+import { Container } from 'react-bootstrap';
 import { Navigate } from 'react-router-dom';
 
 export default class SignIn extends Component {
@@ -52,49 +55,59 @@ export default class SignIn extends Component {
     }
 
     return (
-      <div className="auth">
-        <form className="form-container" onSubmit={this.handleSubmit}>
-          <h6 className="form-container__subtitle">
-            Are you a admin? Please Sign In first to Add Recipe
-          </h6>{' '}
-          <br />
-          <br />
-          <h3 className="form-container__title">Sign In</h3>
+      <HelmetProvider>
+        <Container>
+          <Helmet>
+            <meta charSet="utf-8" />
+            <title>{meta.title} | Sign In</title>
+          </Helmet>
+        </Container>
+        <Container>
+          <div className="auth">
+            <form className="form-container" onSubmit={this.handleSubmit}>
+              <h6 className="form-container__subtitle">
+                Are you a admin? Please Sign In first to Add Recipe
+              </h6>{' '}
+              <br />
+              <br />
+              <h3 className="form-container__title">Sign In</h3>
 
-          <div>
-            <label className="form-container__label">Email address</label>
-            <input
-              type="email"
-              placeholder="Enter email"
-              onChange={(e) => this.setState({ email: e.target.value })}
-              className="form-container__input"
-            />
-          </div>
+              <div>
+                <label className="form-container__label">Email address</label>
+                <input
+                  type="email"
+                  placeholder="Enter email"
+                  onChange={(e) => this.setState({ email: e.target.value })}
+                  className="form-container__input"
+                />
+              </div>
 
-          <div>
-            <label className="form-container__label">Password</label>
-            <input
-              type="password"
-              placeholder="Enter password"
-              onChange={(e) => this.setState({ password: e.target.value })}
-              className="form-container__input"
-            />
-          </div>
+              <div>
+                <label className="form-container__label">Password</label>
+                <input
+                  type="password"
+                  placeholder="Enter password"
+                  onChange={(e) => this.setState({ password: e.target.value })}
+                  className="form-container__input"
+                />
+              </div>
 
-          <div>
-            <br />
-            <button type="submit" className="form-container__submit-button">
-              Submit
-            </button>
+              <div>
+                <br />
+                <button type="submit" className="form-container__submit-button">
+                  Submit
+                </button>
+              </div>
+              <p>
+                Don't have an account?{' '}
+                <a href="/sign-up" className="form-container__signup-link">
+                  <span style={{ color: 'white' }}>Sign Up</span>
+                </a>
+              </p>
+            </form>
           </div>
-          <p>
-            Don't have an account?{' '}
-            <a href="/sign-up" className="form-container__signup-link">
-              <span style={{ color: 'white' }}>Sign Up</span>
-            </a>
-          </p>
-        </form>
-      </div>
+        </Container>
+      </HelmetProvider>
     );
   }
 }
