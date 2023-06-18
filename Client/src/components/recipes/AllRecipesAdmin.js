@@ -5,6 +5,7 @@ import NavBarAdmin from '../NavBarAdmin';
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { meta } from "../contact/content_option";
 import { Container } from "react-bootstrap";
+import { Navigate } from 'react-router-dom';
 
 const Recipes = () => {
   const [recipes, setRecipes] = useState([]);
@@ -13,11 +14,16 @@ const Recipes = () => {
     const data = await res.data;
     return data;
   };
+  const isLoggedIn = window.localStorage.getItem('loggedIn');
 
   useEffect(() => {
     sendRequest().then((data) => setRecipes(data.recipes));
   }, []);
 
+  if (!isLoggedIn) {
+    return <Navigate to="/sign-in" replace />;
+  }
+  
   return (
     <HelmetProvider>
       <NavBarAdmin />
