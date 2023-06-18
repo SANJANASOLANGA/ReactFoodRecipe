@@ -4,7 +4,6 @@ import axios from 'axios';
 import { Box, Button, InputLabel, TextField, Typography } from '@mui/material';
 
 const labelStyles = { color: 'white', mb: 1, mt: 2, fontSize: '20px' };
-const isLoggedIn = window.localStorage.getItem('loggedIn');
 
 const RecipeDetail = () => {
   const navigate = useNavigate();
@@ -52,9 +51,6 @@ const RecipeDetail = () => {
     e.preventDefault()
     console.log(inputs);
     sendRequest().then((data) => console.log(data)).then(() => navigate("/edit-recipes"));
-  }
-  if (!isLoggedIn) {
-    return <Navigate to="/sign-in" replace />;
   }
   return (
     <div className='auth'>
