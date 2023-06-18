@@ -8,7 +8,7 @@ import { TbToolsKitchen2 } from "react-icons/tb";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo.svg";
 import "../style.css";
 
 function NavBar() {
