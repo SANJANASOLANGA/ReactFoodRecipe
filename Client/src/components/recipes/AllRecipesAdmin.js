@@ -28,7 +28,7 @@ const Recipes = () => {
   if (!isLoggedIn) {
     return <Navigate to="/sign-in" replace />;
   }
-  
+
   return (
     <HelmetProvider>
       <NavBarAdmin />
@@ -38,21 +38,27 @@ const Recipes = () => {
           <title>{meta.title} | Recipes</title>
         </Helmet>
       </Container>
+      {loading ? (
+        <Spinner />
+      ) : (
+        <div>
+          <div className='recipe-page'>
+            {recipes &&
+              recipes.map((recipe, index) => (
+                <UserRecipe
+                  key={index}
+                  id={recipe._id}
+                  isUser={localStorage.getItem('userId') === recipe.user._id}
+                  title={recipe.title}
+                  description={recipe.description}
+                  imageURL={recipe.image}
+                  userName={recipe.user.name}
+                />
+              ))}
+          </div>
+        </div>
+      )}
 
-      <div className='recipe-page'>
-        {recipes &&
-          recipes.map((recipe, index) => (
-            <UserRecipe
-              key={index}
-              id={recipe._id}
-              isUser={localStorage.getItem('userId') === recipe.user._id}
-              title={recipe.title}
-              description={recipe.description}
-              imageURL={recipe.image}
-              userName={recipe.user.name}
-            />
-          ))}
-      </div>
     </HelmetProvider>
   );
 };
