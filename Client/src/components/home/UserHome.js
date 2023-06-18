@@ -2,7 +2,7 @@ import React from "react";
 import NavBar from "../Navbar";
 import { meta } from "../contact/content_option";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import { Container, Row, Col, Alert } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import mainUserHome from "../../assets/mainUserHome.jpeg";
 import downloadRecipe from "../../assets/downloadRecipe.jpeg";
 import AddRecipe from "../../assets/AddRecipe.jpeg";
