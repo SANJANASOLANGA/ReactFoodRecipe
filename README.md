@@ -1,1 +1,1 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/tavE-A7n)
+Developed a food recipe website using the MERN stack. The website allows users to explore a variety of recipes, contribute their own recipes. It incorporates user authentication, real-time updates, and a user-friendly interface.
